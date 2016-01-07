@@ -262,6 +262,7 @@ Transform:
   m_GameObject: {fileID: 404636049}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
+
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1862005147}
@@ -286,6 +287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 5000
   accelerateSpeed: 1000
+  explosionPrefab: {fileID: 400010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
 --- !u!54 &404636052
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1261,6 +1263,7 @@ Transform:
   m_GameObject: {fileID: 1917268503}
   m_LocalRotation: {x: -0.2013597, y: 0.024390027, z: 0.0050155376, w: 0.97920084}
   m_LocalPosition: {x: 4.186038, y: -7.4701414, z: 68.41536}
+
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
