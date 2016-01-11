@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class boat : MonoBehaviour {
 
-    public float turnSpeed = 1000f;
+    public float sideSpeed = 10f;
     public float accelerateSpeed = 1000f;
 
 	public Transform explosionPrefab;
@@ -21,11 +21,13 @@ public class boat : MonoBehaviour {
         float v = Input.GetAxis("Vertical");
 
         //Turn right or left.
-        rbody.AddTorque(0f, h * turnSpeed * Time.deltaTime, 0);
+		//rbody.AddTorque(0f, h * accelerateSpeed * Time.deltaTime, 0);
 
+
+		//Move Left or right
+		rbody.transform.Translate(h * sideSpeed * Time.deltaTime, 0, 0);
         //Move Forward
         rbody.AddForce(transform.forward * accelerateSpeed * Time.deltaTime);
-
 	}
 
     
