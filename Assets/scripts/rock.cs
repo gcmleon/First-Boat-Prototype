@@ -21,7 +21,7 @@ public class rock : MonoBehaviour {
         if (col.collider.name == "Cube (3)")
         {
             print("Hit by the front of the boat");
-            rend.material.color = Color.blue;
+            //rend.material.color = Color.blue;
         }
         
     }

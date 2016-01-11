@@ -23,7 +23,7 @@ public class switchMode : MonoBehaviour {
             player.SetActive(false);
         }
         //Set to FPS Mode (Player)
-        if (Input.GetKey("2"))
+        /*if (Input.GetKey("2"))
         {
             boat.GetComponent<Rigidbody>().isKinematic = true;
             boat.GetComponent<boat>().enabled = false;
@@ -31,5 +31,6 @@ public class switchMode : MonoBehaviour {
             player.SetActive(true);
             player.transform.transform.position = playerStartPos.transform.position;
         }
+        */
     }
 }
