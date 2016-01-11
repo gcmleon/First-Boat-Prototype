@@ -36,7 +36,7 @@ public class boat : MonoBehaviour {
         //Any part of the boat hits an object
 
         //Hits any rock
-		if (col.collider.name == "Group003" || col.collider.name == "toad1" )
+		if (col.collider.name == "Group003" || col.collider.name == "toad 1" )
         {
 			ContactPoint contact = col.contacts[0];
 			Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
