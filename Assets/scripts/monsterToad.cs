@@ -22,5 +22,9 @@ public class monsterToad : MonoBehaviour {
         Mathf.SmoothStep(0f, 1f,
         Mathf.PingPong(Time.time / secondsForOneLength, 1f)
         ));
+
+		//Atack
+		//this.GetComponent<Animation>().wrapMode= WrapMode.Loop;
+		//this.GetComponent<Animation>().CrossFade("Mon_T_Attack01");
     }
 }
