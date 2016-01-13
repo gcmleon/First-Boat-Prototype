@@ -27,7 +27,7 @@ public class boat : MonoBehaviour {
 		//Move Left or right
 		rbody.transform.Translate(h * sideSpeed * Time.deltaTime, 0, 0);
         //Move Forward
-        rbody.AddForce(transform.forward * accelerateSpeed * Time.deltaTime);
+        //rbody.AddForce(transform.forward * accelerateSpeed * Time.deltaTime);
 	}
 
     
