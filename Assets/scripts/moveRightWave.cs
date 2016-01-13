@@ -30,7 +30,7 @@ public class moveRightWave : MonoBehaviour {
 
 
 		//Move Left or right along with the boat
-		transform.position = new Vector3(boatPosition[0]+offset, 1, 0);
+		transform.position = new Vector3(boatPosition[0]+offset, transform.position[1], boatPosition[2]);
 
 
 		//Move Forward
