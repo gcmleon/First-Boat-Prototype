@@ -1,19 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class moveRightWave : MonoBehaviour {
+public class moveWaves : MonoBehaviour {
 
 	public GameObject boat;
+	public GameObject rightWave;
+	public GameObject leftWave;
 	public float offset;
 
 	private float boatSideSpeed;
 	private float boatAccelerationSpeed;
 
-	private Rigidbody rb;
+	private Rigidbody rightWaveBody;
+	private Rigidbody leftWaveBody;
 
 	// Use this for initialization
 	void Start () {
-		rb = GetComponent<Rigidbody>();
+		rightWaveBody = rightWave.GetComponent<Rigidbody>();
+		leftWaveBody = leftWave.GetComponent<Rigidbody> ();
 
 		boatSideSpeed = boat.GetComponent<boat>().sideSpeed;
 		boatAccelerationSpeed = boat.GetComponent<boat>().accelerateSpeed;
@@ -27,13 +31,16 @@ public class moveRightWave : MonoBehaviour {
 		float h = Input.GetAxis("Horizontal");
 		float v = Input.GetAxis("Vertical");
 
-		if (h != 0)
-		{
+		if (h > 0) {
+			leftWaveBody.transform.position = new Vector3(boatPosition[0]-offset, leftWaveBody.transform.position[1], boatPosition[2]);
+		} else if (h < 0) {
+			//Move rightWave along with the boat
+			rightWave.transform.position = new Vector3(boatPosition[0]+offset, rightWaveBody.transform.position[1], boatPosition[2]);
+		} else {
 			
 		}
 
-		//Move Left or right along with the boat
-		transform.position = new Vector3(boatPosition[0]+offset, transform.position[1], boatPosition[2]);
+
 
 
 		//Move Forward

@@ -488,7 +488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sideSpeed: 10
-  accelerateSpeed: 0
+  accelerateSpeed: 1000
   explosionPrefab: {fileID: 400010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
 --- !u!54 &404636052
 Rigidbody:
@@ -1186,6 +1186,51 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1192879424
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1192879426}
+  - 114: {fileID: 1192879425}
+  m_Layer: 0
+  m_Name: Waves
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1192879425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1192879424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 995e75e4509fe43c08b058eaeab813c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 404636049}
+  rightWave: {fileID: 1279490141}
+  leftWave: {fileID: 1233656200}
+  offset: 5
+--- !u!4 &1192879426
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1192879424}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.04, y: 3.4499998, z: -1.3299999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1233656205}
+  - {fileID: 1279490147}
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
 --- !u!1 &1215449264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,7 +1305,6 @@ GameObject:
   - 135: {fileID: 1233656203}
   - 23: {fileID: 1233656202}
   - 54: {fileID: 1233656201}
-  - 114: {fileID: 1233656206}
   m_Layer: 0
   m_Name: LeftWave
   m_TagString: Right Wave
@@ -1335,24 +1379,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1233656200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.04, y: -4, z: -1.33}
+  m_LocalPosition: {x: -16.08, y: -3.6, z: -0}
   m_LocalScale: {x: 10, y: 8, z: 10}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
---- !u!114 &1233656206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1233656200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a3b5021a95764ce0acd7194983a5841, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boat: {fileID: 404636049}
-  offset: 7
+  m_Father: {fileID: 1192879426}
+  m_RootOrder: 0
 --- !u!1 &1250322632 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
@@ -1369,7 +1400,6 @@ GameObject:
   - 135: {fileID: 1279490145}
   - 23: {fileID: 1279490144}
   - 54: {fileID: 1279490143}
-  - 114: {fileID: 1279490142}
   m_Layer: 0
   m_Name: RightWave
   m_TagString: Right Wave
@@ -1377,19 +1407,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1279490142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1279490141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb1ad96474d5542bd862ffea64bf455a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boat: {fileID: 404636049}
-  offset: 7
 --- !u!54 &1279490143
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1457,11 +1474,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1279490141}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.04, y: -4, z: -1.33}
+  m_LocalPosition: {x: 0, y: -2.74, z: -0}
   m_LocalScale: {x: 10, y: 8, z: 10}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_Father: {fileID: 1192879426}
+  m_RootOrder: 1
 --- !u!1 &1373851000
 GameObject:
   m_ObjectHideFlags: 0
