@@ -1221,6 +1221,7 @@ MonoBehaviour:
   rightWave: {fileID: 1279490141}
   leftWave: {fileID: 1233656200}
   offset: 5
+  maxY: 0.1
 --- !u!4 &1192879426
 Transform:
   m_ObjectHideFlags: 0
@@ -1894,8 +1895,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1917268503}
-  m_LocalRotation: {x: -0.008976771, y: 0.07163956, z: 0.00064477907, w: 0.99739003}
-  m_LocalPosition: {x: -15.215725, y: -17.234318, z: -69.02399}
+  m_LocalRotation: {x: -0.008976771, y: 0.07163955, z: 0.00064477895, w: 0.99739003}
+  m_LocalPosition: {x: -9.186447, y: -17.234318, z: -69.89462}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
