@@ -7,12 +7,16 @@ public class boat : MonoBehaviour {
     public float sideSpeed = 10f;
     public float accelerateSpeed = 1000f;
 
+	public Transform leftLimit;
+	public Transform rightLimit;
+
 	public Transform explosionPrefab;
     private Rigidbody rbody;
 
 	// Use this for initialization
 	void Start () {
         rbody = GetComponent<Rigidbody>();
+
 	}
 	
 	// Update is called once per frame
@@ -25,7 +29,20 @@ public class boat : MonoBehaviour {
 
 
 		//Move Left or right
-		rbody.transform.Translate(h * sideSpeed * Time.deltaTime, 0, 0);
+		if ((Mathf.Abs(rbody.transform.position [0]) < Mathf.Abs(rightLimit.position [0]))) {
+			rbody.transform.Translate (h * sideSpeed * Time.deltaTime, 0, 0);
+			if ((Mathf.Abs (rbody.transform.position [0]) < Mathf.Abs (leftLimit.position [0]))) {
+				rbody.transform.Translate (h * sideSpeed * Time.deltaTime, 0, 0);
+			} else {
+				rbody.transform.Translate (-1 * sideSpeed * Time.deltaTime, 0, 0);
+				print ("You cannot cross right limits");
+			}
+
+		} else {
+			rbody.transform.Translate (1 * sideSpeed * Time.deltaTime, 0, 0);
+			print ("You cannot cross left limits");
+		}
+
         //Move Forward
         rbody.AddForce(transform.forward * accelerateSpeed * Time.deltaTime);
 	}
