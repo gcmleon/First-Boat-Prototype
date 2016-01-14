@@ -29,18 +29,19 @@ public class boat : MonoBehaviour {
 
 
 		//Move Left or right
+		//Validates if the boat is colliding with the left limit or the right limit
 		if ((Mathf.Abs(rbody.transform.position [0]) < Mathf.Abs(rightLimit.position [0]))) {
 			rbody.transform.Translate (h * sideSpeed * Time.deltaTime, 0, 0);
 			if ((Mathf.Abs (rbody.transform.position [0]) < Mathf.Abs (leftLimit.position [0]))) {
 				rbody.transform.Translate (h * sideSpeed * Time.deltaTime, 0, 0);
 			} else {
 				rbody.transform.Translate (-1 * sideSpeed * Time.deltaTime, 0, 0);
-				print ("You cannot cross right limits");
+				//print ("You cannot cross right limits");
 			}
 
 		} else {
 			rbody.transform.Translate (1 * sideSpeed * Time.deltaTime, 0, 0);
-			print ("You cannot cross left limits");
+			//print ("You cannot cross left limits");
 		}
 
         //Move Forward

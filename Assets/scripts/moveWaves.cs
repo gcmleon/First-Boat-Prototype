@@ -6,15 +6,16 @@ public class moveWaves : MonoBehaviour {
 	public GameObject boat;
 	public GameObject rightWave;
 	public GameObject leftWave;
-	public float offset;
+	public float offset;//Determines the distance betweeen the wave and the boat
+	public float maxY; //Controls the max height of the waves
 
 	private float boatSideSpeed;
 	private float boatAccelerationSpeed;
 
-	private float accRight = 0;
-	private float accLeft = 0;
-	private Vector3 initRightPosition;
-	private Vector3 initLeftPosition;
+	private float accRight = 0; //Acceleration of the rightWave
+	private float accLeft = 0; //Acceleration of the leftWave
+	private Vector3 initRightPosition; //The initial position of rightWave
+	private Vector3 initLeftPosition; //The innitial position of leftwave
 
 	// Use this for initialization
 	void Start () {
@@ -36,19 +37,28 @@ public class moveWaves : MonoBehaviour {
 
 		if (h > 0) {
 			//Move leftWave along with the boat
-			accLeft += 0.001f;
+			if (accLeft < maxY) {
+				accLeft += 0.001f;
+				leftWave.transform.position = new Vector3 (boatPosition [0] - offset, leftWave.transform.position [1] + accLeft, boatPosition [2]);
+			} else {
+				leftWave.transform.position = new Vector3(boatPosition[0]-offset, leftWave.transform.position[1], boatPosition[2]);
+			}
 			accRight = 0;
-			leftWave.transform.position = new Vector3(boatPosition[0]-offset, leftWave.transform.position[1]+accLeft, boatPosition[2]);
 			rightWave.transform.position = new Vector3(boatPosition[0]+offset, initRightPosition[1], initRightPosition[2]);
 
 		} else if (h < 0) {
 			//Move rightWave along with the boat
-			accRight += 0.001f;
+			if (accRight < maxY) {
+				accRight += 0.001f;
+				rightWave.transform.position = new Vector3 (boatPosition [0] + offset, rightWave.transform.position [1] + accRight, boatPosition [2]);
+			} else {
+				rightWave.transform.position = new Vector3(boatPosition[0]+offset, rightWave.transform.position[1], boatPosition[2]);
+			}
 			accLeft = 0;
-			rightWave.transform.position = new Vector3(boatPosition[0]+offset, rightWave.transform.position[1]+accRight, boatPosition[2]);
 			leftWave.transform.position = new Vector3(boatPosition[0]-offset, initLeftPosition[1], initLeftPosition[2]);
 
 		} else {
+			//Stop the movement of the waves
 			accLeft = 0;
 			accRight = 0;
 			leftWave.transform.position = new Vector3(boatPosition[0]-offset, initLeftPosition[1], initLeftPosition[2]);
