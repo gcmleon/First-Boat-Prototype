@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class boat : MonoBehaviour {
 
     public float sideSpeed = 10f;
+	public float maxSideSpeed;
     public float accelerateSpeed = 1000f;
 
 	public Transform leftLimit;
@@ -13,10 +14,14 @@ public class boat : MonoBehaviour {
 	public Transform explosionPrefab;
     private Rigidbody rbody;
 
+	private float acc = 1; //Acceleration of the boatToRight
+	private bool changeDirection = false;
+	private float last_value;
+	private int i = 0;
+
 	// Use this for initialization
 	void Start () {
         rbody = GetComponent<Rigidbody>();
-
 	}
 	
 	// Update is called once per frame
@@ -28,19 +33,47 @@ public class boat : MonoBehaviour {
 		//rbody.AddTorque(0f, h * accelerateSpeed * Time.deltaTime, 0);
 
 
+		//Needed if we implement side acceleration
+
+		/*if (i == 0) {
+			last_value = h;
+		}
+		if (h == 0 || changeDirection) {
+			acc = 0;
+		}
+		else if (h < 0){
+			if (h != last_value) {
+				changeDirection = true;
+			} else {
+				last_value = h;
+			}
+		}
+		else{
+			if (h != last_value) {
+				changeDirection = true;
+			} else {
+				last_value = h;
+			}
+		}
+		if (acc < maxSideSpeed) {
+			acc += 0.001f;
+		}
+		*/
+
 		//Move Left or right
 		//Validates if the boat is colliding with the left limit or the right limit
+
 		if ((Mathf.Abs(rbody.transform.position [0]) < Mathf.Abs(rightLimit.position [0]))) {
-			rbody.transform.Translate (h * sideSpeed * Time.deltaTime, 0, 0);
+			rbody.transform.Translate (h * sideSpeed * Time.deltaTime * acc, 0, 0);
 			if ((Mathf.Abs (rbody.transform.position [0]) < Mathf.Abs (leftLimit.position [0]))) {
-				rbody.transform.Translate (h * sideSpeed * Time.deltaTime, 0, 0);
+				rbody.transform.Translate (h * sideSpeed * Time.deltaTime * acc, 0, 0);
 			} else {
-				rbody.transform.Translate (-1 * sideSpeed * Time.deltaTime, 0, 0);
+				rbody.transform.Translate (-1 * sideSpeed * Time.deltaTime * acc, 0, 0);
 				//print ("You cannot cross right limits");
 			}
 
 		} else {
-			rbody.transform.Translate (1 * sideSpeed * Time.deltaTime, 0, 0);
+			rbody.transform.Translate (1 * sideSpeed * Time.deltaTime * acc, 0, 0);
 			//print ("You cannot cross left limits");
 		}
 
