@@ -73,7 +73,7 @@ public class boat : MonoBehaviour {
 			}
 
 		} else {
-			rbody.transform.Translate (1 * sideSpeed * Time.deltaTime * acc, 0, 0);
+			rbody.transform.Translate (sideSpeed * Time.deltaTime * acc, 0, 0);
 			//print ("You cannot cross left limits");
 		}
 

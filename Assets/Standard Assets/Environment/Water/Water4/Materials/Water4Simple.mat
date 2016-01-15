@@ -158,7 +158,7 @@ Material:
       data:
         first:
           name: _GAmplitude
-        second: {r: 0, g: 0.5, b: 0, a: 0}
+        second: {r: 0, g: 0.3, b: 0, a: 0}
       data:
         first:
           name: _GFrequency
