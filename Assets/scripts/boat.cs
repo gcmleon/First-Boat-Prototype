@@ -32,7 +32,6 @@ public class boat : MonoBehaviour {
         //Turn right or left.
 		//rbody.AddTorque(0f, h * accelerateSpeed * Time.deltaTime, 0);
 
-
 		//Needed if we implement side acceleration
 
 		/*if (i == 0) {
@@ -62,7 +61,6 @@ public class boat : MonoBehaviour {
 
 		//Move Left or right
 		//Validates if the boat is colliding with the left limit or the right limit
-
 		if ((Mathf.Abs(rbody.transform.position [0]) < Mathf.Abs(rightLimit.position [0]))) {
 			rbody.transform.Translate (h * sideSpeed * Time.deltaTime * acc, 0, 0);
 			if ((Mathf.Abs (rbody.transform.position [0]) < Mathf.Abs (leftLimit.position [0]))) {
@@ -76,7 +74,6 @@ public class boat : MonoBehaviour {
 			rbody.transform.Translate (sideSpeed * Time.deltaTime * acc, 0, 0);
 			//print ("You cannot cross left limits");
 		}
-
         //Move Forward
         rbody.AddForce(transform.forward * accelerateSpeed * Time.deltaTime);
 	}
@@ -99,7 +96,15 @@ public class boat : MonoBehaviour {
         else if (col.collider.name == "toad1")
         {
             print("Boat hits monster");
+        } else if (col.collider.name == "Left Shooting")
+        {
+            print("Boat hit by Left Wave");
         }
+        else if (col.collider.name == "Right Shooting")
+        {
+            print("Boat hit by Right Wave");
+        }
+        print("BOAT COLLISION " + col.collider.name);
     }
 
 	IEnumerator WaitAndRestart(float waitTime) {
