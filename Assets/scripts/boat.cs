@@ -83,20 +83,30 @@ public class boat : MonoBehaviour {
     {
         //Any part of the boat hits an object
 
-        //Hits any rock
-		if (col.collider.name == "Group003" || col.collider.name == "toad 1" )
+        // Boat hits any rock, rock gets destroyed
+		if (col.collider.name == "Group003")
         {
-			ContactPoint contact = col.contacts[0];
+            
+            print("boat hits rock - destroy rock and take life from boat");
+			/*ContactPoint contact = col.contacts[0];
 			Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
 			Vector3 pos = contact.point;
 			Instantiate(explosionPrefab, pos, rot);
 			gameObject.transform.localScale = new Vector3 (0, 0, 0);
-			StartCoroutine(WaitAndRestart(0.5F));
+			StartCoroutine(WaitAndRestart(0.5F));*/
         }
-        else if (col.collider.name == "toad1")
+        else if (col.collider.name == "toad 1")
         {
-            print("Boat hits monster");
-        } else if (col.collider.name == "Left Shooting")
+            print("boat hits monster - destroy monster and take life from boat");
+            /*
+            ContactPoint contact = col.contacts[0];
+            Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
+            Vector3 pos = contact.point;
+            Instantiate(explosionPrefab, pos, rot);
+            gameObject.transform.localScale = new Vector3(0, 0, 0);
+            StartCoroutine(WaitAndRestart(0.5F));*/
+        }
+        else if (col.collider.name == "Left Shooting")
         {
             print("Boat hit by Left Wave");
         }
@@ -108,9 +118,9 @@ public class boat : MonoBehaviour {
     }
 
 	IEnumerator WaitAndRestart(float waitTime) {
-		Destroy(gameObject,1);
+		Destroy(gameObject, 1);
 		yield return new WaitForSeconds(waitTime);
-		print ("waiting...");
+		print ("waiting to restart...");
 		SceneManager.LoadScene(0);
 	}
     
