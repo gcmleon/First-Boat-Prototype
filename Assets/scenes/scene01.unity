@@ -531,8 +531,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 285611802}
-  m_LocalRotation: {x: -0.008976771, y: 0.071639545, z: 0.0006447788, w: 0.99739003}
-  m_LocalPosition: {x: -8.988998, y: -17.20945, z: -68.52725}
+  m_LocalRotation: {x: -0.06448446, y: 0, z: 0, w: 0.9979187}
+  m_LocalPosition: {x: -1.4, y: -11.15, z: -50.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -868,6 +868,10 @@ MonoBehaviour:
   leftLimit: {fileID: 1590312269}
   rightLimit: {fileID: 1693567382}
   explosionPrefab: {fileID: 400010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
+  healthTransform: {fileID: 2118222761}
+  maxHealth: 100
+  healthText: {fileID: 255989964}
+  visualHealth: {fileID: 2118222762}
 --- !u!54 &404636052
 Rigidbody:
   m_ObjectHideFlags: 0
