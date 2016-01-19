@@ -23,7 +23,7 @@ public class WinText : MonoBehaviour {
 	void Update () 
 
 	{
-		print (finish);
+		//print (finish);
 		ColorChange();
 	}
 

@@ -3,6 +3,8 @@ using System.Collections;
 
 public class rock : MonoBehaviour {
 
+    public Transform explosionPrefab;
+
     private Renderer rend;
 
 	// Use this for initialization
@@ -17,11 +19,16 @@ public class rock : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        //If the front of the boat (Cube 3) hits a rock
+        // if the front of the boat (Cube 3) hits a rock
         if (col.collider.name == "Cube (3)")
         {
-            print("Hit by the front of the boat");
-            //rend.material.color = Color.blue;
+            print("Rock hit by the front of the boat");
+            ContactPoint contact = col.contacts[0];
+            Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
+            Vector3 pos = contact.point;
+            Instantiate(explosionPrefab, pos, rot);
+            // Destroy rock
+            Destroy(rend.gameObject);
         }
         
     }
