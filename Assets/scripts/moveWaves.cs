@@ -7,7 +7,8 @@ public class moveWaves : MonoBehaviour {
 	public GameObject rightWave;
 	public GameObject leftWave;
 	public float offset;//Determines the distance betweeen the wave and the boat
-	public float maxY; //Controls the max height of the waves
+	public float accWave; //Controls the max acc that affects the height of the waves
+	public float maxScaleY = 0; //The max scale that the wave will have in Y
 
 	private float boatSideSpeed;
 	private float boatAccelerationSpeed;
@@ -17,6 +18,7 @@ public class moveWaves : MonoBehaviour {
 	private Vector3 initRightPosition; //The initial position of rightWave
 	private Vector3 initLeftPosition; //The innitial position of leftwave
 
+
 	// Use this for initialization
 	void Start () {
 
@@ -25,6 +27,7 @@ public class moveWaves : MonoBehaviour {
 
 		initRightPosition = leftWave.transform.position;
 		initLeftPosition = rightWave.transform.position;
+
 	}
 
 	// Update is called once per frame
@@ -37,23 +40,29 @@ public class moveWaves : MonoBehaviour {
 
 		if (h > 0) {
 			//Move leftWave along with the boat
-			if (accLeft < maxY) {
-				accLeft += 0.001f;
-				leftWave.transform.position = new Vector3 (boatPosition [0] - offset, leftWave.transform.position [1] + accLeft, boatPosition [2]);
+			if (leftWave.transform.localScale[1] + accLeft < maxScaleY) {
+				accLeft += accWave;
+				leftWave.transform.localScale = new Vector3(10, leftWave.transform.localScale[1]+accLeft, 10);
+				//leftWave.transform.localScale[1] = leftWave.transform.localScale[1] + accLeft;
+				leftWave.transform.position = new Vector3 (boatPosition [0] - offset, leftWave.transform.position [1], boatPosition [2]);
 			} else {
 				leftWave.transform.position = new Vector3(boatPosition[0]-offset, leftWave.transform.position[1], boatPosition[2]);
 			}
+			print (leftWave.transform.localScale[1] );
+			rightWave.transform.localScale = new Vector3(10, 8, 10);
 			accRight = 0;
 			rightWave.transform.position = new Vector3(boatPosition[0]+offset, initRightPosition[1], initRightPosition[2]);
 
 		} else if (h < 0) {
 			//Move rightWave along with the boat
-			if (accRight < maxY) {
-				accRight += 0.001f;
-				rightWave.transform.position = new Vector3 (boatPosition [0] + offset, rightWave.transform.position [1] + accRight, boatPosition [2]);
+			if (rightWave.transform.localScale[1] + accRight < maxScaleY) {
+				accRight += accWave;
+				rightWave.transform.localScale = new Vector3(10, rightWave.transform.localScale[1]+accRight, 10);
+				rightWave.transform.position = new Vector3 (boatPosition [0] + offset, rightWave.transform.position [1], boatPosition [2]);
 			} else {
 				rightWave.transform.position = new Vector3(boatPosition[0]+offset, rightWave.transform.position[1], boatPosition[2]);
 			}
+			leftWave.transform.localScale = new Vector3(10, 8, 10);
 			accLeft = 0;
 			leftWave.transform.position = new Vector3(boatPosition[0]-offset, initLeftPosition[1], initLeftPosition[2]);
 
@@ -61,13 +70,12 @@ public class moveWaves : MonoBehaviour {
 			//Stop the movement of the waves
 			accLeft = 0;
 			accRight = 0;
+			rightWave.transform.localScale = new Vector3(10, 8, 10);
+			leftWave.transform.localScale = new Vector3(10, 8, 10);
 			leftWave.transform.position = new Vector3(boatPosition[0]-offset, initLeftPosition[1], initLeftPosition[2]);
 			rightWave.transform.position = new Vector3(boatPosition[0]+offset, initRightPosition[1], initRightPosition[2]);
 
 		}
-
-
-
 
 		//Move Forward
 		//rb.AddForce(transform.forward * boatAccelerationSpeed * Time.deltaTime);

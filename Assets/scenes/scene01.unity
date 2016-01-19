@@ -531,8 +531,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 285611802}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2710835, y: -12.998993, z: -57.21187}
+  m_LocalRotation: {x: -0.008976771, y: 0.071639545, z: 0.0006447788, w: 0.99739003}
+  m_LocalPosition: {x: -8.988998, y: -17.20945, z: -68.52725}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2661,8 +2661,9 @@ MonoBehaviour:
   boat: {fileID: 404636049}
   rightWave: {fileID: 1279490141}
   leftWave: {fileID: 1233656200}
-  offset: 6
-  maxY: 0.07
+  offset: 5
+  accWave: 0.001
+  maxScaleY: 15
 --- !u!4 &1192879426
 Transform:
   m_ObjectHideFlags: 0
@@ -4363,8 +4364,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1917268503}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 65.21819, y: -118.533295, z: -169.748}
+  m_LocalRotation: {x: -0.008976771, y: 0.071639545, z: 0.0006447788, w: 0.99739003}
+  m_LocalPosition: {x: -8.988998, y: -17.20945, z: -68.52725}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
