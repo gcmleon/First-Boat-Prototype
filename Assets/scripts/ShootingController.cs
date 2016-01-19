@@ -27,7 +27,14 @@ public class ShootingController : MonoBehaviour {
         if (!shot)
         {
             Vector3 boatPosition = boat.transform.position;
-            gameObject.transform.position = new Vector3(initPosition.x, initPosition.y, boatPosition.z + 8);
+            float offsetX = 10.2f;
+
+            if (gameObject.CompareTag("Left Wave"))
+            {
+                offsetX = -1 * offsetX;
+            }
+ 
+            gameObject.transform.position = new Vector3(initPosition.x + offsetX, initPosition.y, boatPosition.z + 8);
         }
         
 
