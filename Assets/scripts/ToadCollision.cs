@@ -19,9 +19,9 @@ public class ToadCollision : MonoBehaviour {
     {
         //print("i'm the toad collider, collided with: " + c.collider.name);
 
-        if (c.collider.name == "fishing_boat")
+        if (c.collider.name == "fishing_boat" || c.collider.name == "Left Shooting" || c.collider.name == "Right Shooting")
         {
-            print("I'm toad - boat collided with me!");
+            print("I'm toad - boat or wave collided with me!");
             ContactPoint contact = c.contacts[0];
             Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
             Vector3 pos = contact.point;
