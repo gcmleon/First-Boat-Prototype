@@ -25,8 +25,8 @@ public class monsterToad : MonoBehaviour {
         ));
 
 		//Atack
-		//this.GetComponent<Animation>().wrapMode= WrapMode.Loop;
-		//this.GetComponent<Animation>().CrossFade("Mon_T_Attack01");
+		this.GetComponent<Animation>().wrapMode= WrapMode.Loop;
+		this.GetComponent<Animation>().CrossFade("Mon_T_Attack01");
     }
 
     void OnCollisionEnter(Collision collision)

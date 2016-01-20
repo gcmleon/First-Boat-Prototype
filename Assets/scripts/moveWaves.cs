@@ -48,7 +48,7 @@ public class moveWaves : MonoBehaviour {
 			} else {
 				leftWave.transform.position = new Vector3(boatPosition[0]-offset, leftWave.transform.position[1], boatPosition[2]);
 			}
-			print (leftWave.transform.localScale[1] );
+			//print (leftWave.transform.localScale[1] );
 			rightWave.transform.localScale = new Vector3(10, 8, 10);
 			accRight = 0;
 			rightWave.transform.position = new Vector3(boatPosition[0]+offset, initRightPosition[1], initRightPosition[2]);

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class boat : MonoBehaviour {
 
@@ -19,10 +20,39 @@ public class boat : MonoBehaviour {
 	private float last_value;
 	private int i = 0;
 
-	// Use this for initialization
-	void Start () {
+    // Healthbar
+    public RectTransform healthTransform;
+    private float cachedY;
+    private float minXValue;
+    private float maxXValue;
+    public int maxHealth;
+    public Text healthText;
+    public Image visualHealth;
+    private int currentHealth;
+    public int CurrentHealth
+    {
+        get
+        {
+            return currentHealth;
+        }
+
+        set
+        {
+            currentHealth = value;
+            HandleHealth();
+        }
+    }
+
+    // Use this for initialization
+    void Start () {
         rbody = GetComponent<Rigidbody>();
-	}
+
+        // Healthbar
+        cachedY = healthTransform.position.y;
+        maxXValue = healthTransform.position.x;
+        minXValue = healthTransform.position.x - healthTransform.rect.width;
+        CurrentHealth = maxHealth;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -78,43 +108,78 @@ public class boat : MonoBehaviour {
         rbody.AddForce(transform.forward * accelerateSpeed * Time.deltaTime);
 	}
 
-    
+    private void HandleHealth()
+    {
+        if (currentHealth > 0)
+        { healthText.text = "Health:" + currentHealth; }
+        else
+        {
+            currentHealth = 0;
+            healthText.text = "Health:" + currentHealth;
+        }
+        float currentXValue = MapVlaues(currentHealth, 0, maxHealth, minXValue, maxXValue);
+        healthTransform.position = new Vector3(currentXValue, cachedY);
+
+
+
+        if (currentHealth > maxHealth / 2) //more than 50
+        {
+            visualHealth.color = new Color32((byte)MapVlaues(currentHealth, maxHealth / 2, maxHealth, 255, 0), 255, 0, 255);
+        }
+        else // less than 50
+        {
+            visualHealth.color = new Color32(255, (byte)MapVlaues(currentHealth, 0, maxHealth / 2, 0, 255), 0, 255);
+
+
+
+        }
+    }
     void OnCollisionEnter(Collision col)
     {
         //Any part of the boat hits an object
 
-        // Boat hits any rock, rock gets destroyed
-		if (col.collider.name == "Group003")
-        {
-            
-            print("boat hits rock - destroy rock and take life from boat");
-			/*ContactPoint contact = col.contacts[0];
-			Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
-			Vector3 pos = contact.point;
-			Instantiate(explosionPrefab, pos, rot);
-			gameObject.transform.localScale = new Vector3 (0, 0, 0);
-			StartCoroutine(WaitAndRestart(0.5F));*/
+        if (currentHealth > 0)
+        {     // Boat hits any rock, rock gets destroyed
+            if (col.collider.name == "Group003")
+            {
+
+                print("boat hits rock - destroy rock and take life from boat");
+                CurrentHealth -= 24;
+                /*ContactPoint contact = col.contacts[0];
+                Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
+                Vector3 pos = contact.point;
+                Instantiate(explosionPrefab, pos, rot);
+                gameObject.transform.localScale = new Vector3 (0, 0, 0);
+                StartCoroutine(WaitAndRestart(0.5F));*/
+            }
+            else if (col.collider.name == "toad 1")
+            {
+                print("boat hits monster - destroy monster and take life from boat");
+                CurrentHealth -= 45;
+                /*
+                ContactPoint contact = col.contacts[0];
+                Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
+                Vector3 pos = contact.point;
+                Instantiate(explosionPrefab, pos, rot);
+                gameObject.transform.localScale = new Vector3(0, 0, 0);
+                StartCoroutine(WaitAndRestart(0.5F));*/
+            }
+            else if (col.collider.name == "Left Shooting")
+            {
+                print("Boat hit by Left Wave");
+            }
+            else if (col.collider.name == "Right Shooting")
+            {
+                print("Boat hit by Right Wave");
+            }
+            print("BOAT COLLISION " + col.collider.name);
         }
-        else if (col.collider.name == "toad 1")
+        else
         {
-            print("boat hits monster - destroy monster and take life from boat");
-            /*
-            ContactPoint contact = col.contacts[0];
-            Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
-            Vector3 pos = contact.point;
-            Instantiate(explosionPrefab, pos, rot);
-            gameObject.transform.localScale = new Vector3(0, 0, 0);
-            StartCoroutine(WaitAndRestart(0.5F));*/
+           
+            StartCoroutine(WaitAndRestart(0.5F));
         }
-        else if (col.collider.name == "Left Shooting")
-        {
-            print("Boat hit by Left Wave");
-        }
-        else if (col.collider.name == "Right Shooting")
-        {
-            print("Boat hit by Right Wave");
-        }
-        print("BOAT COLLISION " + col.collider.name);
+
     }
 
 	IEnumerator WaitAndRestart(float waitTime) {
@@ -123,5 +188,12 @@ public class boat : MonoBehaviour {
 		print ("waiting to restart...");
 		SceneManager.LoadScene(0);
 	}
-    
+
+    private float MapVlaues(float x, float inMin, float inMax, float outMin, float outMax)
+    {
+        return (x - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+
+    }
+
+
 }
