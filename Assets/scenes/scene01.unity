@@ -531,8 +531,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 285611802}
-  m_LocalRotation: {x: -0.06448446, y: 0, z: 0, w: 0.9979187}
-  m_LocalPosition: {x: -1.4, y: -11.15, z: -50.35}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.88901734, y: -5.1025543, z: -20.57884}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -809,7 +809,7 @@ Transform:
   m_GameObject: {fileID: 391531050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.2, y: 0, z: 8}
-  m_LocalScale: {x: 10, y: 3, z: 10}
+  m_LocalScale: {x: 10, y: 8, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
@@ -1316,7 +1316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winText: {fileID: 2050533251}
   fadeSpeed: 1
-  endscene: 0
+  endscene: 1
   Canvas: {fileID: 612427030}
 --- !u!23 &623682336
 MeshRenderer:
@@ -2430,7 +2430,7 @@ Transform:
   m_GameObject: {fileID: 1041437754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.2, y: 0, z: 8}
-  m_LocalScale: {x: 10, y: 3, z: 10}
+  m_LocalScale: {x: 10, y: 8, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
@@ -4369,7 +4369,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1917268503}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 65.21819, y: -118.533295, z: -169.748}
+  m_LocalPosition: {x: -0.88901734, y: -5.1025543, z: -20.57884}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

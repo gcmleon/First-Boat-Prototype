@@ -23,12 +23,12 @@ public class rock : MonoBehaviour {
         if (col.collider.name == "Cube (3)")
         {
             print("Rock hit by the front of the boat");
-            ContactPoint contact = col.contacts[0];
+            /*ContactPoint contact = col.contacts[0];
             Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
             Vector3 pos = contact.point;
             Instantiate(explosionPrefab, pos, rot);
             // Destroy rock
-            Destroy(rend.gameObject);
+            Destroy(rend.gameObject);*/
         }
         
     }
