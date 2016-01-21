@@ -12,6 +12,12 @@ public class boat : MonoBehaviour {
 	public Transform leftLimit;
 	public Transform rightLimit;
 
+    // Shooting waves
+    public GameObject shot;
+    public Transform leftShot;
+    public Transform rightShot;
+    public float fireRate;
+
 	public Transform explosionPrefab;
     private Rigidbody rbody;
 
@@ -19,6 +25,9 @@ public class boat : MonoBehaviour {
 	private bool changeDirection = false;
 	private float last_value;
 	private int i = 0;
+
+    // threshold for shooting waves
+    private float nextFire;
 
     // Healthbar
     public RectTransform healthTransform;
@@ -106,7 +115,21 @@ public class boat : MonoBehaviour {
 		}
         //Move Forward
         rbody.AddForce(transform.forward * accelerateSpeed * Time.deltaTime);
-	}
+
+        // Shooting left wave
+        if (Input.GetMouseButtonDown(0) && Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            Instantiate(shot, leftShot.position, leftShot.rotation);
+        }
+
+        // Shooting right wave
+        if (Input.GetMouseButtonDown(1) && Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            Instantiate(shot, rightShot.position, rightShot.rotation);
+        }
+    }
 
     private void HandleHealth()
     {
@@ -155,9 +178,9 @@ public class boat : MonoBehaviour {
                 gameObject.transform.localScale = new Vector3(0, 0, 0);
                 StartCoroutine(WaitAndRestart(0.5F));*/
             }
-            else if (col.collider.name == "Left Shooting")
+            else if (col.collider.name == "Shooting_Wave(Clone)")
             {
-                print("Boat hit by Left Wave");
+                print("Boat hit by Shooting Wave");
             }
             else if (col.collider.name == "Right Shooting")
             {

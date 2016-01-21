@@ -17,11 +17,11 @@ public class ToadCollision : MonoBehaviour {
 
     void OnCollisionEnter(Collision c)
     {
-        //print("i'm the toad collider, collided with: " + c.collider.name);
+        print("i'm the toad collider, collided with: " + c.collider.name);
 
-        if (c.collider.name == "fishing_boat" || c.collider.name == "Left Shooting" || c.collider.name == "Right Shooting")
+        if (c.collider.name == "fishing_boat" || c.collider.name == "Shooting_Wave(Clone)")
         {
-            print("I'm toad - boat or wave collided with me!");
+            //print("I'm toad - boat or wave collided with me!");
             ContactPoint contact = c.contacts[0];
             Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
             Vector3 pos = contact.point;
@@ -30,6 +30,11 @@ public class ToadCollision : MonoBehaviour {
             Destroy(gameObject);
             GameObject wepon = GetComponent<MeshCollider>().gameObject;
             Destroy(wepon);
+        }
+
+        if (c.collider.name == "Shooting_Wave(Clone)")
+        {
+            Destroy(c.gameObject);
         }
     }
 }
