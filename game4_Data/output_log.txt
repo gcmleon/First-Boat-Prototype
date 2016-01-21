@@ -18,7 +18,7 @@ Platform assembly: C:\Users\gcmolinaleon\Documents\GitHub\First-Boat-Prototype\g
 Loading C:\Users\gcmolinaleon\Documents\GitHub\First-Boat-Prototype\game4_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\gcmolinaleon\Documents\GitHub\First-Boat-Prototype\game4_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\gcmolinaleon\Documents\GitHub\First-Boat-Prototype\game4_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.480 seconds
+- Completed reload, in  0.653 seconds
 Platform assembly: C:\Users\gcmolinaleon\Documents\GitHub\First-Boat-Prototype\game4_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\gcmolinaleon\Documents\GitHub\First-Boat-Prototype\game4_Data\Managed\System.dll (this message is harmless)
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
@@ -26,62 +26,78 @@ desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 87.892792 ms
+UnloadTime: 2.757541 ms
+i'm the toad collider, collided with: monster2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+i'm the toad collider, collided with: monster1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 3288 -> priority: 1 
-boat hits rock - destroy rock and take life from boat
+  Thread -> id: 5194 -> priority: 1 
+i'm the toad collider, collided with: monster2
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-BOAT COLLISION Group003
+i'm the toad collider, collided with: monster1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-boat hits rock - destroy rock and take life from boat
+i'm the toad collider, collided with: monster2
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-BOAT COLLISION Group003
+i'm the toad collider, collided with: monster1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-boat hits monster - destroy monster and take life from boat
+i'm the toad collider, collided with: monster2
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-BOAT COLLISION toad 1
+i'm the toad collider, collided with: monster1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-I'm toad - boat or wave collided with me!
+i'm the toad collider, collided with: monster2
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-boat hits monster - destroy monster and take life from boat
+i'm the toad collider, collided with: monster1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-BOAT COLLISION toad 1
+i'm the toad collider, collided with: monster2
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-I'm toad - boat or wave collided with me!
+i'm the toad collider, collided with: monster1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-waiting to restart...
+i'm the toad collider, collided with: monster2
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 51.526978 ms
+i'm the toad collider, collided with: monster1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1027.
-Total: 0.832792 ms (FindLiveObjects: 0.183203 ms CreateObjectMapping: 0.030720 ms MarkObjects: 0.596527 ms  DeleteObjects: 0.018432 ms)
+i'm the toad collider, collided with: monster2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.324109 ms
+i'm the toad collider, collided with: monster1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-Unloading 112 unused Assets to reduce memory usage. Loaded Objects now: 343.
-Total: 1.275160 ms (FindLiveObjects: 0.157509 ms CreateObjectMapping: 0.036864 ms MarkObjects: 0.613283 ms  DeleteObjects: 0.464151 ms)
+i'm the toad collider, collided with: monster2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+i'm the toad collider, collided with: monster1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
