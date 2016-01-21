@@ -30,6 +30,11 @@ public class rock : MonoBehaviour {
             // Destroy rock
             Destroy(rend.gameObject);*/
         }
+
+        if (col.collider.name == "Shooting_Wave(Clone)")
+        {
+            Destroy(col.gameObject);
+        }
         
     }
 }
