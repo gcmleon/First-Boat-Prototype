@@ -21,7 +21,6 @@ public class ToadCollision : MonoBehaviour {
 
         if (c.collider.name == "fishing_boat" || c.collider.name == "Shooting_Wave(Clone)")
         {
-            //print("I'm toad - boat or wave collided with me!");
             ContactPoint contact = c.contacts[0];
             Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
             Vector3 pos = contact.point;
@@ -35,6 +34,7 @@ public class ToadCollision : MonoBehaviour {
         if (c.collider.name == "Shooting_Wave(Clone)")
         {
             Destroy(c.gameObject);
+            print("I'm toad - wave destroyed after it collided with me!");
         }
     }
 }
