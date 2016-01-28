@@ -23,6 +23,13 @@ namespace UnityStandardAssets.Cameras
         private float m_TurnSpeedVelocityChange; // The change in the turn speed velocity
         private Vector3 m_RollUp = Vector3.up;// The roll of the camera around the z axis ( generally this will always just be up )
 
+		public float accCamera = 0.0001f;
+		//0.25 = 25 in the Inspector Transform Rotation in Unity
+		public float maxZCamera = 0.25f;
+
+		private float accLeft = 0;
+		private float accRight = 0;
+
         protected override void FollowTarget(float deltaTime)
         {
             // if no target, or no time passed then we quit early, as there is nothing to do
@@ -99,6 +106,36 @@ namespace UnityStandardAssets.Cameras
                 }
             }
             var rollRotation = Quaternion.LookRotation(targetForward, m_RollUp);
+
+			//Rotate Camera
+
+			float h = Input.GetAxis("Horizontal");
+			float v = Input.GetAxis("Vertical");
+
+			if (h > 0) {
+				//When the boat moves to the right
+				if (Math.Abs(transform.localRotation[2] + accLeft) < maxZCamera) {
+					accLeft += accCamera;
+					transform.localRotation = new Quaternion(0, 0, transform.localRotation [2] + accLeft, 1);
+				}
+				accRight = 0;
+			} else if (h < 0) {
+				//When the boat moves to the left
+				if (Math.Abs(transform.localRotation[2] + accRight) < maxZCamera) {
+					accRight += accCamera;
+					transform.localRotation = new Quaternion(0, 0, transform.localRotation[2] - accRight, 1);
+				}
+				accLeft = 0;
+			} else {
+				//When the boat does not move to the sides
+				accLeft = 0;
+				accRight = 0;
+
+				//It makes the camera to come back immediately to the center
+				//transform.localRotation = new Quaternion (0, 0, 0, 1);
+			}
+
+			print (transform.localRotation);
 
             // and aligning with the target object's up direction (i.e. its 'roll')
             m_RollUp = m_RollSpeed > 0 ? Vector3.Slerp(m_RollUp, targetUp, m_RollSpeed*deltaTime) : Vector3.up;

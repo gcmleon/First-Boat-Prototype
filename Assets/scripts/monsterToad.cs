@@ -9,7 +9,7 @@ public class monsterToad : MonoBehaviour {
 
     private Vector3 frometh;
     private Vector3 untoeth;
-    private float secondsForOneLength = 5f;
+    public float secondsForOneLength = 5f;
 
     // Use this for initialization
     void Start () {
