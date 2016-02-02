@@ -128,23 +128,19 @@ public class boat : MonoBehaviour {
             if (col.collider.name == "Group003")
             {
 
-                print("boat hits rock - destroy rock and take life from boat");
+                //print("boat hits rock - destroy rock and take life from boat");
                 CurrentHealth -= 24;
             }
             else if (col.collider.name == "toad 1")
             {
-                print("boat hits monster - destroy monster and take life from boat");
+                //print("boat hits monster - destroy monster and take life from boat");
                 CurrentHealth -= 45;
             }
             else if (col.collider.name == "Shooting_Wave(Clone)")
             {
                 print("Boat hit by Shooting Wave");
             }
-            else if (col.collider.name == "Right Shooting")
-            {
-                print("Boat hit by Right Wave");
-            }
-            print("BOAT COLLISION " + col.collider.name);
+            //print("BOAT COLLISION " + col.collider.name);
         }
         else
         {

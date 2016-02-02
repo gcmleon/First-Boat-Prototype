@@ -4,6 +4,7 @@ using System.Collections;
 public class ToadCollision : MonoBehaviour {
 
     public Transform explosionPrefab;
+    public int scoreValue;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +25,9 @@ public class ToadCollision : MonoBehaviour {
             Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
             Vector3 pos = contact.point;
             Instantiate(explosionPrefab, pos, rot);
+            // Add corresponding score
+            scoreManager.UpdateScore(scoreValue);
+
             // Destroy all part of the toad
             Destroy(gameObject);
             GameObject wepon = GetComponent<MeshCollider>().gameObject;
