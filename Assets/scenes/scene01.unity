@@ -460,6 +460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   farEnd: {fileID: 1847384257}
+  secondsForOneLength: 5
 --- !u!143 &232294049
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1198,6 +1199,14 @@ Prefab:
       propertyPath: m_Target
       value: 
       objectReference: {fileID: 404636050}
+    - target: {fileID: 11400000, guid: baec086904791744185aaa07a6cf55c2, type: 2}
+      propertyPath: accCamera
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: baec086904791744185aaa07a6cf55c2, type: 2}
+      propertyPath: maxZCamera
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: baec086904791744185aaa07a6cf55c2, type: 2}
   m_IsPrefabParent: 0
@@ -3477,7 +3486,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!1001 &1220585510
 Prefab:
   m_ObjectHideFlags: 0
@@ -3922,6 +3931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   farEnd: {fileID: 477077206}
+  secondsForOneLength: 5
 --- !u!143 &1284685873
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4130,6 +4140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   farEnd: {fileID: 1795300363}
+  secondsForOneLength: 5
 --- !u!143 &1341187659
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4356,6 +4367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   farEnd: {fileID: 485361374}
+  secondsForOneLength: 5
 --- !u!143 &1471323672
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4412,6 +4424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   farEnd: {fileID: 990980928}
+  secondsForOneLength: 5
 --- !u!143 &1479048041
 CharacterController:
   m_ObjectHideFlags: 0
@@ -6466,8 +6479,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1917268503}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0662079, y: -24.390263, z: 439.5805}
+  m_LocalRotation: {x: -0.088373475, y: 0.015835315, z: 0.0014051, w: 0.99596053}
+  m_LocalPosition: {x: -15.01528, y: -34.556366, z: -220.62926}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6558,6 +6571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   farEnd: {fileID: 2143625195}
+  secondsForOneLength: 5
 --- !u!143 &1930993819
 CharacterController:
   m_ObjectHideFlags: 0
