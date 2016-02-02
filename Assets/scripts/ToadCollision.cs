@@ -17,7 +17,6 @@ public class ToadCollision : MonoBehaviour {
 
     void OnCollisionEnter(Collision c)
     {
-        //print("i'm the toad collider, collided with: " + c.collider.name);
 
         if (c.collider.name == "fishing_boat" || c.collider.name == "Shooting_Wave(Clone)")
         {
@@ -34,7 +33,6 @@ public class ToadCollision : MonoBehaviour {
         if (c.collider.name == "Shooting_Wave(Clone)")
         {
             Destroy(c.gameObject);
-            //print("I'm toad - wave destroyed after it collided with me!");
         }
     }
 }

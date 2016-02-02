@@ -27,6 +27,7 @@ namespace UnityStandardAssets.Cameras
 		//0.25 = 25 in the Inspector Transform Rotation in Unity
 		public float maxZCamera = 0.25f;
 
+		//The accelerate that changes the tilting of the scene.
 		private float accLeft = 0;
 		private float accRight = 0;
 

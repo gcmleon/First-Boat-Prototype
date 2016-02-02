@@ -43,12 +43,10 @@ public class moveWaves : MonoBehaviour {
 			if (leftWave.transform.localScale[1] + accLeft < maxScaleY) {
 				accLeft += accWave;
 				leftWave.transform.localScale = new Vector3(10, leftWave.transform.localScale[1]+accLeft, 10);
-				//leftWave.transform.localScale[1] = leftWave.transform.localScale[1] + accLeft;
 				leftWave.transform.position = new Vector3 (boatPosition [0] - offset, leftWave.transform.position [1], boatPosition [2]);
 			} else {
 				leftWave.transform.position = new Vector3(boatPosition[0]-offset, leftWave.transform.position[1], boatPosition[2]);
 			}
-			//print (leftWave.transform.localScale[1] );
 			rightWave.transform.localScale = new Vector3(10, 8, 10);
 			accRight = 0;
 			rightWave.transform.position = new Vector3(boatPosition[0]+offset, initRightPosition[1], initRightPosition[2]);
@@ -76,8 +74,6 @@ public class moveWaves : MonoBehaviour {
 			rightWave.transform.position = new Vector3(boatPosition[0]+offset, initRightPosition[1], initRightPosition[2]);
 
 		}
-
-		//Move Forward
-		//rb.AddForce(transform.forward * boatAccelerationSpeed * Time.deltaTime);
+			
 	}
 }
