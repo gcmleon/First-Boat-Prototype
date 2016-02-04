@@ -12,6 +12,9 @@ public class WinText : MonoBehaviour {
 
 	private bool finish;
 
+	private int firstlevel = 1;
+	private int _endscene = 2;
+
 	void Awake () 
 
 	{
@@ -38,7 +41,7 @@ public class WinText : MonoBehaviour {
 
 		if (endscene) 
 		{
-			SceneManager.LoadScene(1);	
+			SceneManager.LoadScene(_endscene);	
 		}
 
 	}
@@ -55,6 +58,6 @@ public class WinText : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(waitTime);
 		print ("waiting...");
-		SceneManager.LoadScene(0);
+		SceneManager.LoadScene(firstlevel);
 	}
 }

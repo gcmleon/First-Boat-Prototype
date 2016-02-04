@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class boat : MonoBehaviour {
 
+	private int firstlevel = 1;
+
 	//It controls the speed of the boat, to the sides or to the front.
     public float sideSpeed = 10f;
 	public float maxSideSpeed;
@@ -35,7 +37,10 @@ public class boat : MonoBehaviour {
     public Text healthText;
     public Image visualHealth;
     private int currentHealth;
-    public int CurrentHealth
+
+
+
+	public int CurrentHealth
     {
         get
         {
@@ -154,7 +159,7 @@ public class boat : MonoBehaviour {
 		Destroy(gameObject, 1);
 		yield return new WaitForSeconds(waitTime);
 		print ("waiting to restart...");
-		SceneManager.LoadScene(0);
+		SceneManager.LoadScene(firstlevel);
 	}
 
     private float MapVlaues(float x, float inMin, float inMax, float outMin, float outMax)

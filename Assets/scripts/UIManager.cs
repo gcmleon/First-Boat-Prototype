@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour {
 	public GameObject ImageOnPanel;
 	public Texture2D[] tridentPieces = new Texture2D [6]; 
 	private RawImage img;
+	private int firstlevel = 1;
 
 
 
@@ -25,7 +26,7 @@ public class UIManager : MonoBehaviour {
 	void Update () {
 		//Restart with R-key
 		if(Input.GetKeyDown(KeyCode.R))
-			SceneManager.LoadScene(0); //or whatever number your scene is
+			SceneManager.LoadScene(firstlevel); //or whatever number your scene is
 
 		//only to check Trident Images
 		if (Input.GetKeyDown (KeyCode.KeypadPlus)) {
