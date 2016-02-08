@@ -7,6 +7,7 @@ using System.Net.Sockets;
 using System.Net;
 using System;
 using System.Text;
+using System.Collections.Generic;
 public class boat : MonoBehaviour {
 
 	private int firstlevel = 1;
@@ -75,6 +76,14 @@ public class boat : MonoBehaviour {
                 s = null;
             }
             mRunning = true;
+            IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
+            foreach (IPAddress addr in localIPs)
+            {
+                if (addr.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    myIp = addr.ToString();
+                }
+            }
             ThreadStart ts = new ThreadStart(myServ);
             mThread = new Thread(ts);
             if (!mThread.IsAlive)
@@ -189,6 +198,7 @@ public class boat : MonoBehaviour {
     }
 
 	IEnumerator WaitAndRestart(float waitTime) {
+        cleanstuff();
 		Destroy(gameObject, 1);
 		yield return new WaitForSeconds(waitTime);
 		print ("waiting to restart...");
@@ -227,59 +237,64 @@ public class boat : MonoBehaviour {
             //print("inside THREADDDDDDDDDDDDDDDDDDDDDD");
             while (mRunning)
             {
-                s = myList.AcceptSocket();
-                try
+                if (!myList.Pending())
+                    Thread.Sleep(100);
+                else
                 {
-                    byte[] b = new byte[102400];
-                    while (true)
+                    s = myList.AcceptSocket();
+                    try
                     {
-                        //int k = s.Receive(b);
-                        ////.Read(bytesFrom, 0, (int)clientSocket.ReceiveBufferSize);
-                        ////dataFromClient = dataFromClient.Substring(0, dataFromClient.IndexOf(","));
-                        //string dataFromClient = System.Text.Encoding.ASCII.GetString(b, 0, k);
-                        //string[] words = dataFromClient.Split(',');
-                        //x = words[0];
-                        //y = words[1];
-                        //z = words[2];
-                        //myY = words[3];
-                        //foreach (string word in words)
-                        //{
-                        //x = float.Parse(words[0]);
-                        //y = float.Parse(words[1]);
-                        //z = float.Parse(words[2]);
-                        //          Console.Write(word);
-                        //}
-                        //    Console.WriteLine();
-
-                        //for (int i = 0; i < k; i++)
-                        //  Console.Write(Convert.ToChar(b[i]));
-
-                        //ASCIIEncoding asen = new ASCIIEncoding();
-                        //s.Send(asen.GetBytes(y));
-                        //Console.WriteLine("\nSent Acknowledgement");
-                        //s.Close();
-
-                        int k = s.Receive(b);
-                        string dataFromClient = System.Text.Encoding.ASCII.GetString(b, 0, k);
-                        string[] words = dataFromClient.Split(',');
-                        msg = words[3];
-                        inputSpeed = float.Parse(words[3].Substring(0, 3));
-                        vibFlag = words[4].Substring(0, 4);
-                        //print(vibFlag);
-                        if (mRunning == false)
-                            break;
-
-                        if (k == 0)
+                        byte[] b = new byte[102400];
+                        while (true)
                         {
-                            cleanstuff();
-                            break;
+                            //int k = s.Receive(b);
+                            ////.Read(bytesFrom, 0, (int)clientSocket.ReceiveBufferSize);
+                            ////dataFromClient = dataFromClient.Substring(0, dataFromClient.IndexOf(","));
+                            //string dataFromClient = System.Text.Encoding.ASCII.GetString(b, 0, k);
+                            //string[] words = dataFromClient.Split(',');
+                            //x = words[0];
+                            //y = words[1];
+                            //z = words[2];
+                            //myY = words[3];
+                            //foreach (string word in words)
+                            //{
+                            //x = float.Parse(words[0]);
+                            //y = float.Parse(words[1]);
+                            //z = float.Parse(words[2]);
+                            //          Console.Write(word);
+                            //}
+                            //    Console.WriteLine();
+
+                            //for (int i = 0; i < k; i++)
+                            //  Console.Write(Convert.ToChar(b[i]));
+
+                            //ASCIIEncoding asen = new ASCIIEncoding();
+                            //s.Send(asen.GetBytes(y));
+                            //Console.WriteLine("\nSent Acknowledgement");
+                            //s.Close();
+
+                            int k = s.Receive(b);
+                            string dataFromClient = System.Text.Encoding.ASCII.GetString(b, 0, k);
+                            string[] words = dataFromClient.Split(',');
+                            msg = words[3];
+                            inputSpeed = float.Parse(words[3].Substring(0, 3));
+                            vibFlag = words[4].Substring(0, 4);
+                            print(inputSpeed);
+                            if (mRunning == false)
+                                break;
+
+                            if (k == 0)
+                            {
+                                cleanstuff();
+                                break;
+                            }
                         }
                     }
-                }
-                catch (Exception ee)
-                {
-                   // new ReadWrite().writefile("server exception" + ee.Message);
-                    cleanstuff();
+                    catch (Exception ee)
+                    {
+                        // new ReadWrite().writefile("server exception" + ee.Message);
+                        cleanstuff();
+                    }
                 }
             }
         }
@@ -300,10 +315,7 @@ public class boat : MonoBehaviour {
 
     void OnApplicationQuit()
     {
-        mRunning = false;
-        // wait fpr listening thread to terminate (max. 500ms)
-        //mThread.Join(500);
-        mThread.Abort();
+        cleanstuff();
     }
 
 }
