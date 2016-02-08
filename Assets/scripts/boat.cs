@@ -2,7 +2,11 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using System.Threading;
+using System.Net.Sockets;
+using System.Net;
+using System;
+using System.Text;
 public class boat : MonoBehaviour {
 
 	private int firstlevel = 1;
@@ -11,9 +15,9 @@ public class boat : MonoBehaviour {
     public float sideSpeed = 10f;
 	public float maxSideSpeed;
     public float accelerateSpeed = 1000f;
-
-	//The side limits, which the boat can not cross.
-	public Transform leftLimit;
+    public float inputSpeed = 2.5f;
+    //The side limits, which the boat can not cross.
+    public Transform leftLimit;
 	public Transform rightLimit;
 
     // Shooting waves
@@ -63,6 +67,29 @@ public class boat : MonoBehaviour {
         maxXValue = healthTransform.position.x;
         minXValue = healthTransform.position.x - healthTransform.rect.width;
         CurrentHealth = maxHealth;
+
+        try
+        {
+            if (s != null)
+            {
+                s = null;
+            }
+            mRunning = true;
+            ThreadStart ts = new ThreadStart(myServ);
+            mThread = new Thread(ts);
+            if (!mThread.IsAlive)
+            {
+                IPAddress ipAd = IPAddress.Parse(myIp); //Dns.GetHostEntry("localhost").AddressList[0];
+                myList = new TcpListener(ipAd, 5149);
+                myList.Start();
+                mThread.Start();
+            }
+        }
+        catch (Exception e)
+        {
+            //new ReadWrite().writefile(e.Message);
+            myList.Stop();
+        }
     }
 	
 	// Update is called once per frame
@@ -87,8 +114,14 @@ public class boat : MonoBehaviour {
         rbody.AddForce(transform.forward * accelerateSpeed * Time.deltaTime);
 
         // Shooting left wave
-        if (Input.GetMouseButtonDown(0) && Time.time > nextFire)
+        //if (Input.GetMouseButtonDown(0) && Time.time > nextFire)
+        //{
+        //    nextFire = Time.time + fireRate;
+        //    Instantiate(shot, leftShot.position, leftShot.rotation);
+        //}
+        if (vibFlag.Equals("true"))
         {
+            //print("shottttttttttttttttttttttttttttt");
             nextFire = Time.time + fireRate;
             Instantiate(shot, leftShot.position, leftShot.rotation);
         }
@@ -168,5 +201,109 @@ public class boat : MonoBehaviour {
 
     }
 
+    // Server code
+    Socket s;
+    string msg = "0.5";
+    string vibFlag = "false";
+    Thread mThread;
+    TcpListener myList = null;
+    public static bool mRunning = false;
+    string myIp = "192.168.0.105";
+    public void stopListening()
+    {
+        mRunning = false;
+    }
+
+    void myServ()
+    {
+        if (s != null)
+        {
+            s.Close();
+            s = null;
+        }
+        try
+        {
+            // s.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
+            //print("inside THREADDDDDDDDDDDDDDDDDDDDDD");
+            while (mRunning)
+            {
+                s = myList.AcceptSocket();
+                try
+                {
+                    byte[] b = new byte[102400];
+                    while (true)
+                    {
+                        //int k = s.Receive(b);
+                        ////.Read(bytesFrom, 0, (int)clientSocket.ReceiveBufferSize);
+                        ////dataFromClient = dataFromClient.Substring(0, dataFromClient.IndexOf(","));
+                        //string dataFromClient = System.Text.Encoding.ASCII.GetString(b, 0, k);
+                        //string[] words = dataFromClient.Split(',');
+                        //x = words[0];
+                        //y = words[1];
+                        //z = words[2];
+                        //myY = words[3];
+                        //foreach (string word in words)
+                        //{
+                        //x = float.Parse(words[0]);
+                        //y = float.Parse(words[1]);
+                        //z = float.Parse(words[2]);
+                        //          Console.Write(word);
+                        //}
+                        //    Console.WriteLine();
+
+                        //for (int i = 0; i < k; i++)
+                        //  Console.Write(Convert.ToChar(b[i]));
+
+                        //ASCIIEncoding asen = new ASCIIEncoding();
+                        //s.Send(asen.GetBytes(y));
+                        //Console.WriteLine("\nSent Acknowledgement");
+                        //s.Close();
+
+                        int k = s.Receive(b);
+                        string dataFromClient = System.Text.Encoding.ASCII.GetString(b, 0, k);
+                        string[] words = dataFromClient.Split(',');
+                        msg = words[3];
+                        inputSpeed = float.Parse(words[3].Substring(0, 3));
+                        vibFlag = words[4].Substring(0, 4);
+                        //print(vibFlag);
+                        if (mRunning == false)
+                            break;
+
+                        if (k == 0)
+                        {
+                            cleanstuff();
+                            break;
+                        }
+                    }
+                }
+                catch (Exception ee)
+                {
+                   // new ReadWrite().writefile("server exception" + ee.Message);
+                    cleanstuff();
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            cleanstuff();
+        }
+
+    }
+    void cleanstuff()
+    {
+        //myList.Stop();
+        mRunning = false;
+        s = null;
+        myList = null;
+        mThread.Abort();
+    }
+
+    void OnApplicationQuit()
+    {
+        mRunning = false;
+        // wait fpr listening thread to terminate (max. 500ms)
+        //mThread.Join(500);
+        mThread.Abort();
+    }
 
 }
