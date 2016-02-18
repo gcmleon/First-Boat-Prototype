@@ -130,7 +130,7 @@ public class boat : MonoBehaviour {
 			h = Input.GetAxis ("Horizontal");	
 		} else if (inputUsed == 1) {
 			//Move Left the boat with the device
-			if (inputSpeed > 2) {
+			/*if (inputSpeed > 2) {
 				h = 1;
 			} else if (inputSpeed < -2) {
 				//Move Right the boat with the device
@@ -138,6 +138,8 @@ public class boat : MonoBehaviour {
 			} else {
 				h = 0;
 			}
+			*/
+			h = inputSpeed/8;
 		}
 
 		//print (h);

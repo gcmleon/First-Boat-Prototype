@@ -35,8 +35,8 @@ public class moveWaves : MonoBehaviour {
 
 		Vector3 boatPosition = boat.transform.position;
 
-		float h = Input.GetAxis("Horizontal");
-		float v = Input.GetAxis("Vertical");
+		float h = boat.GetComponent<boat>().h;
+		//float v = Input.GetAxis("Vertical");
 
 		if (h > 0) {
 			//Move leftWave along with the boat

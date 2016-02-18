@@ -121,14 +121,14 @@ namespace UnityStandardAssets.Cameras
 			if (h > 0) {
 				//When the boat moves to the right
 				if (Math.Abs(transform.localRotation[2] + accLeft) < maxZCamera) {
-					accLeft += accCamera;
+					accLeft += Math.Abs(h/10000);
 					transform.localRotation = new Quaternion(0, 0, transform.localRotation [2] + accLeft, 1);
 				}
 				accRight = 0;
 			} else if (h < 0) {
 				//When the boat moves to the left
 				if (Math.Abs(transform.localRotation[2] + accRight) < maxZCamera) {
-					accRight += accCamera;
+					accRight += Math.Abs(h/10000);
 					transform.localRotation = new Quaternion(0, 0, transform.localRotation[2] - accRight, 1);
 				}
 				accLeft = 0;
