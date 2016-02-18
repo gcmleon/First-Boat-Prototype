@@ -23,6 +23,7 @@ namespace UnityStandardAssets.Cameras
         private float m_TurnSpeedVelocityChange; // The change in the turn speed velocity
         private Vector3 m_RollUp = Vector3.up;// The roll of the camera around the z axis ( generally this will always just be up )
 
+
 		public float accCamera = 0.0001f;
 		//0.25 = 25 in the Inspector Transform Rotation in Unity
 		public float maxZCamera = 0.25f;
@@ -30,6 +31,9 @@ namespace UnityStandardAssets.Cameras
 		//The accelerate that changes the tilting of the scene.
 		private float accLeft = 0;
 		private float accRight = 0;
+
+		//Object boat;
+		public GameObject boatObject;
 
         protected override void FollowTarget(float deltaTime)
         {
@@ -109,9 +113,10 @@ namespace UnityStandardAssets.Cameras
             var rollRotation = Quaternion.LookRotation(targetForward, m_RollUp);
 
 			//Rotate Camera
+			//float h = Input.GetAxis("Horizontal");
+			//float v = Input.GetAxis("Vertical");
 
-			float h = Input.GetAxis("Horizontal");
-			float v = Input.GetAxis("Vertical");
+			float h = boatObject.GetComponent<boat>().h;
 
 			if (h > 0) {
 				//When the boat moves to the right

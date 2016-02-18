@@ -1131,6 +1131,8 @@ MonoBehaviour:
   sideSpeed: 10
   maxSideSpeed: 0
   accelerateSpeed: 1000
+  inputSpeed: 2.5
+  inputUsed: 0
   leftLimit: {fileID: 1590312269}
   rightLimit: {fileID: 1693567382}
   shot: {fileID: 190458, guid: ab5da481d7af468488ac1424294276a5, type: 2}
@@ -1142,6 +1144,7 @@ MonoBehaviour:
   maxHealth: 100
   healthText: {fileID: 255989964}
   visualHealth: {fileID: 2118222762}
+  h: 0
 --- !u!54 &404636052
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1276,6 +1279,10 @@ Prefab:
       propertyPath: maxZCamera
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: baec086904791744185aaa07a6cf55c2, type: 2}
+      propertyPath: boatObject
+      value: 
+      objectReference: {fileID: 404636049}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: baec086904791744185aaa07a6cf55c2, type: 2}
   m_IsPrefabParent: 0
@@ -6932,8 +6939,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1917268503}
-  m_LocalRotation: {x: 0.08717232, y: 0.89959055, z: 0.21045254, w: -0.3726227}
-  m_LocalPosition: {x: 76.29158, y: -33.46264, z: 592.3797}
+  m_LocalRotation: {x: -0.08837346, y: 0.015835311, z: 0.0014050988, w: 0.99596053}
+  m_LocalPosition: {x: -1.2953136, y: -8.1587, z: -40.72403}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

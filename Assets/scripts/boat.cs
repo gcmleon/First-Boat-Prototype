@@ -17,6 +17,7 @@ public class boat : MonoBehaviour {
 	public float maxSideSpeed;
     public float accelerateSpeed = 1000f;
     public float inputSpeed = 2.5f;
+	public float inputUsed = 0; //0: Keyboard, 1: Android
     //The side limits, which the boat can not cross.
     public Transform leftLimit;
 	public Transform rightLimit;
@@ -43,6 +44,8 @@ public class boat : MonoBehaviour {
     public Image visualHealth;
     private int currentHealth;
 
+	//h
+	public float h = 0;
 
 
 	public int CurrentHealth
@@ -103,8 +106,22 @@ public class boat : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");        
+
+		if (inputUsed == 0) {
+			h = Input.GetAxis ("Horizontal");	
+		} else if (inputUsed == 1) {
+			//Move Left the boat with the device
+			if (inputSpeed > 2) {
+				h = -1;
+			} else if (inputSpeed < -2) {
+				//Move Right the boat with the device
+				h = 1;
+			} else {
+				h = 0;
+			}
+		}
+        
+        //float v = Input.GetAxis("Vertical");        
 
 		//Move Left or right
 		//Validates if the boat is colliding with the left limit or the right limit
