@@ -139,7 +139,7 @@ public class boat : MonoBehaviour {
 				h = 0;
 			}
 			*/
-			h = inputSpeed/8;
+			h = (float)Math.Pow(inputSpeed/10, 2);
 		}
 
 		//print (h);
