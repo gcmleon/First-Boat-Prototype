@@ -131,14 +131,16 @@ public class boat : MonoBehaviour {
 		} else if (inputUsed == 1) {
 			//Move Left the boat with the device
 			if (inputSpeed > 2) {
-				h = -1;
+				h = 1;
 			} else if (inputSpeed < -2) {
 				//Move Right the boat with the device
-				h = 1;
+				h = -1;
 			} else {
 				h = 0;
 			}
 		}
+
+		//print (h);
         
         //float v = Input.GetAxis("Vertical");        
 

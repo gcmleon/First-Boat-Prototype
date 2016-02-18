@@ -1132,7 +1132,7 @@ MonoBehaviour:
   maxSideSpeed: 0
   accelerateSpeed: 1000
   inputSpeed: 2.5
-  inputUsed: 0
+  inputUsed: 1
   leftLimit: {fileID: 1590312269}
   rightLimit: {fileID: 1693567382}
   shot: {fileID: 190458, guid: ab5da481d7af468488ac1424294276a5, type: 2}
@@ -1144,10 +1144,10 @@ MonoBehaviour:
   maxHealth: 100
   healthText: {fileID: 255989964}
   visualHealth: {fileID: 2118222762}
-  h: 0
   healthSpeed: 5
   canvas: {fileID: 1691628451}
   coolDown: 0.5
+  h: 0
 --- !u!54 &404636052
 Rigidbody:
   m_ObjectHideFlags: 0
