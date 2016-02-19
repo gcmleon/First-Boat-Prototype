@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class Restart : MonoBehaviour {
-
+	private int firstlevel = 1;
 	// Use this for initialization
 	void Start () {
 
@@ -14,7 +14,7 @@ public class Restart : MonoBehaviour {
 		//print ("Hey this is update");
 		//print (Input.GetKeyDown (KeyCode.R));
 		if(Input.GetKeyDown(KeyCode.R))
-			SceneManager.LoadScene(0); //or whatever number your scene is
+			SceneManager.LoadScene(firstlevel); //or whatever number your scene is
 
 	}
 }
