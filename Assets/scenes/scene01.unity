@@ -1132,7 +1132,7 @@ MonoBehaviour:
   maxSideSpeed: 0
   accelerateSpeed: 1000
   inputSpeed: 2.5
-  inputUsed: 1
+  inputUsed: 0
   leftLimit: {fileID: 1590312269}
   rightLimit: {fileID: 1693567382}
   shot: {fileID: 190458, guid: ab5da481d7af468488ac1424294276a5, type: 2}
@@ -1701,7 +1701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winText: {fileID: 2050533251}
   fadeSpeed: 1
-  endscene: 1
+  endscene: 0
   Canvas: {fileID: 612427030}
 --- !u!23 &623682336
 MeshRenderer:
@@ -6942,8 +6942,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1917268503}
-  m_LocalRotation: {x: -0.08837346, y: 0.015835311, z: 0.0014050988, w: 0.99596053}
-  m_LocalPosition: {x: -1.2953136, y: -8.1587, z: -40.72403}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.099791, y: -16.58034, z: 87.2503}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7795,7 +7795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9191176, g: 0.108131476, b: 0.108131476, a: 1}
+  m_Color: {r: 0.33333334, g: 0, b: 0.52205884, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7815,7 +7815,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You won!
+  m_Text: 'Level 1: Win!'
 --- !u!222 &2050533252
 CanvasRenderer:
   m_ObjectHideFlags: 0
