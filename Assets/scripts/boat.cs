@@ -15,7 +15,7 @@ public class boat : MonoBehaviour {
 	//It controls the speed of the boat, to the sides or to the front.
     public float sideSpeed = 10f;
 	public float maxSideSpeed;
-    public float accelerateSpeed = 1000f;
+    public float accelerateSpeed = 5000f;
     public float inputSpeed = 2.5f;
 	public float inputUsed = 0; //0: Keyboard, 1: Android
     //The side limits, which the boat can not cross.
@@ -165,11 +165,12 @@ public class boat : MonoBehaviour {
         rbody.AddForce(transform.forward * accelerateSpeed * Time.deltaTime);
 
         // Shooting left wave
-        //if (Input.GetMouseButtonDown(0) && Time.time > nextFire)
-        //{
-        //    nextFire = Time.time + fireRate;
-        //    Instantiate(shot, leftShot.position, leftShot.rotation);
-        //}
+        if (Input.GetMouseButtonDown(0) && Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            Instantiate(shot, leftShot.position, leftShot.rotation);
+        }
+        // Why did you comment the previous if?
         if (vibFlag.Equals("true"))
         {
             //print("shottttttttttttttttttttttttttttt");
