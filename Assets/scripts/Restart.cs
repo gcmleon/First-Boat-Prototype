@@ -15,6 +15,8 @@ public class Restart : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.R))
         {
             boat.mRunning = false;
+            // reset score
+            scoreManager.UpdateScore(0);
             SceneManager.LoadScene(firstlevel); 
         }
 	}
