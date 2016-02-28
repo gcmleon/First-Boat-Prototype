@@ -9,12 +9,15 @@ public class monsterToad : MonoBehaviour {
 
     private Vector3 frometh;
     private Vector3 untoeth;
+    private string objectName;
+    private string monster = "monster";
     public float secondsForOneLength = 5f;
 
     // Use this for initialization
     void Start () {
         frometh = transform.position;
         untoeth = farEnd.position;
+        objectName = this.gameObject.name;
     }
 	
 	// Update is called once per frame
@@ -24,9 +27,13 @@ public class monsterToad : MonoBehaviour {
         Mathf.PingPong(Time.time / secondsForOneLength, 1f)
         ));
 
-		//Atack
-		this.GetComponent<Animation>().wrapMode= WrapMode.Loop;
-		this.GetComponent<Animation>().CrossFade("Mon_T_Attack01");
+        //Attack
+        if (objectName.Contains(monster))
+        {
+            this.GetComponent<Animation>().wrapMode = WrapMode.Loop;
+            this.GetComponent<Animation>().CrossFade("Mon_T_Attack01");
+        }
+		
     }
 		
 }
