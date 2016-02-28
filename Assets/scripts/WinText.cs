@@ -16,12 +16,24 @@ public class WinText : MonoBehaviour {
 	private int secondlevel = 2;
 	private int thirdlevel = 3;
 	private int _endscene = 4;
+    private int sceneToLoad;
 
 	void Awake () 
 
 	{
 		winText = Canvas.GetComponentInChildren<Text> ();
 		winText.color = Color.clear;
+
+        // if it is the 1st level, 2nd comes
+        if (SceneManager.GetActiveScene().buildIndex == firstlevel)
+        {
+            sceneToLoad = secondlevel;
+        } else if (SceneManager.GetActiveScene().buildIndex == secondlevel)
+        {
+            sceneToLoad = thirdlevel;
+        } else {
+            sceneToLoad = firstlevel;
+        }
 
 	}
 
@@ -60,6 +72,6 @@ public class WinText : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(waitTime);
 		print ("waiting...");
-		SceneManager.LoadScene(secondlevel);
+		SceneManager.LoadScene(sceneToLoad);
 	}
 }
