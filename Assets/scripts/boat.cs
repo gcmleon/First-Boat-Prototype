@@ -34,12 +34,12 @@ public class boat : MonoBehaviour {
     // threshold for shooting waves
     private float nextFire;
 
-    // Healthbar variables declerations 
+    // Healthbar variables declarations 
     public RectTransform healthTransform;
     private float cachedY;
     private float minXValue;
     private float maxXValue;
-    public int maxHealth;
+    private int maxHealth = 100;
     public Text healthText;
     public Image visualHealth;
     private Vector3 movment;
@@ -48,7 +48,7 @@ public class boat : MonoBehaviour {
     private float currentXValue;
     public float coolDown;// taking damage after a period of time 
     private bool onCD; // checks if it is in the cooldown period (can take damage or not )or not 
-    private int currentHealth;
+    private static int currentHealth = 100;
 
 	//h
 	public float h = 0;
@@ -80,13 +80,13 @@ public class boat : MonoBehaviour {
         //The max value of the x-Position 
         maxXValue = healthTransform.position.x;
         minXValue = healthTransform.position.x - healthTransform.rect.width;
-        CurrentHealth = maxHealth;
+        //CurrentHealth = maxHealth;
 
 		// Calculating the min value of the x-Position       
 		minXValue = healthTransform.position.x - healthTransform.rect.width * canvas.scaleFactor;
 
 		// Set the current health to the max health which is 100 
-		currentHealth = maxHealth;
+		//currentHealth = maxHealth;
 
 		// set the cooldamage to false
 		onCD = false;

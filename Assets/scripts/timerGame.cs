@@ -3,7 +3,7 @@ using System.Collections;
 
 public class timerGame : MonoBehaviour {
 
-	float currentTimer = 0;
+	private static float currentTimer = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +16,6 @@ public class timerGame : MonoBehaviour {
 	}
 
 	void OnGUI(){
-		GUI.Label (new Rect(50, 50, 200, 100), "Time: " + (int)currentTimer);
+		GUI.Label (new Rect(625, 280, 200, 100), "Time: " + (int)currentTimer);
 	}
 }
