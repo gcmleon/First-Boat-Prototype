@@ -5,7 +5,7 @@ using System.Collections;
 public class scoreManager : MonoBehaviour
 {
 
-    public static int score;
+    public static int score = 0;
     Text text;
 
     // Use this for initialization
@@ -13,8 +13,6 @@ public class scoreManager : MonoBehaviour
     {
         // get text reference
         text = GetComponent<Text>();
-        // reset the score
-        score = 0;
 
     }
 
