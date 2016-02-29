@@ -96,7 +96,7 @@ namespace UnityStandardAssets.Cameras
             }
 
             // camera position moves towards target position:
-            transform.position = Vector3.Lerp(transform.position, m_Target.position, deltaTime*m_MoveSpeed);
+            //transform.position = Vector3.Lerp(transform.position, m_Target.position, deltaTime*m_MoveSpeed);
 
 			//camera position only moves forward
 			transform.position = Vector3.Lerp(transform.position, new Vector3(0, 1, m_Target.position[2]), deltaTime*m_MoveSpeed);
