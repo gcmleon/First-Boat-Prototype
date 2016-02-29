@@ -11,6 +11,7 @@ public class monsterToad : MonoBehaviour {
     private Vector3 untoeth;
     private string objectName;
     private string monster = "monster";
+    private string jump = "Jump";
     public float secondsForOneLength = 5f;
 
     // Use this for initialization
@@ -27,13 +28,19 @@ public class monsterToad : MonoBehaviour {
         Mathf.PingPong(Time.time / secondsForOneLength, 1f)
         ));
 
-        //Attack
+        // Attack
         if (objectName.Contains(monster))
         {
             this.GetComponent<Animation>().wrapMode = WrapMode.Loop;
             this.GetComponent<Animation>().CrossFade("Mon_T_Attack01");
         }
-		
+
+        if (objectName.Contains(jump))
+        {
+            this.GetComponent<Animation>().wrapMode = WrapMode.Loop;
+            this.GetComponent<Animation>().CrossFade("Mon_T_Attack");
+        }
+
     }
 		
 }

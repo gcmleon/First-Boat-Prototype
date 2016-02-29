@@ -18,7 +18,7 @@ Platform assembly: C:\Users\gcmolinaleon\Documents\GitHub\First-Boat-Prototype\g
 Loading C:\Users\gcmolinaleon\Documents\GitHub\First-Boat-Prototype\game4_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\gcmolinaleon\Documents\GitHub\First-Boat-Prototype\game4_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\gcmolinaleon\Documents\GitHub\First-Boat-Prototype\game4_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  1.344 seconds
+- Completed reload, in  0.484 seconds
 Platform assembly: C:\Users\gcmolinaleon\Documents\GitHub\First-Boat-Prototype\game4_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\gcmolinaleon\Documents\GitHub\First-Boat-Prototype\game4_Data\Managed\System.dll (this message is harmless)
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
@@ -26,16 +26,36 @@ desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.605260 ms
+UnloadTime: 6.060220 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 29d0 -> priority: 1 
+  Thread -> id: 25f4 -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 25.896969 ms
+UnloadTime: 129.604935 ms
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1603.
-Total: 1.072407 ms (FindLiveObjects: 0.294912 ms CreateObjectMapping: 0.056971 ms MarkObjects: 0.691479 ms  DeleteObjects: 0.016197 ms)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 2681.
+Total: 2.519599 ms (FindLiveObjects: 0.759063 ms CreateObjectMapping: 0.106123 ms MarkObjects: 1.560576 ms  DeleteObjects: 0.030720 ms)
 
-boat hits monster - destroy monster and take life from boat
+boat hits rock - destroy rock and take life from boat
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Rock hit by the front of the boat
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+boat hits rock - destroy rock and take life from boat
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Rock hit by the front of the boat
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Rock hit by the front of the boat
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+boat hits rock - destroy rock and take life from boat
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
@@ -67,13 +87,35 @@ waiting...
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
+waiting...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.699602 ms
+UnloadTime: 18.577227 ms
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 2991.
-Total: 1.870569 ms (FindLiveObjects: 0.600995 ms CreateObjectMapping: 0.078754 ms MarkObjects: 1.142225 ms  DeleteObjects: 0.044125 ms)
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 3011.
+Total: 3.133441 ms (FindLiveObjects: 0.870772 ms CreateObjectMapping: 0.140753 ms MarkObjects: 2.059916 ms  DeleteObjects: 0.059764 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 11.183201 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 3011.
+Total: 3.115567 ms (FindLiveObjects: 0.874682 ms CreateObjectMapping: 0.134050 ms MarkObjects: 2.034781 ms  DeleteObjects: 0.068701 ms)
 
 boat hits rock - destroy rock and take life from boat
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Rock hit by the front of the boat
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Rock hit by the front of the boat
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Rock hit by the front of the boat
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
@@ -81,7 +123,15 @@ boat hits rock - destroy rock and take life from boat
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-boat hits monster - destroy monster and take life from boat
+Rock hit by the front of the boat
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Rock hit by the front of the boat
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Rock hit by the front of the boat
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
@@ -90,8 +140,8 @@ waiting to restart...
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.771096 ms
+UnloadTime: 9.937085 ms
 
-Unloading 86 unused Assets to reduce memory usage. Loaded Objects now: 1644.
-Total: 1.753833 ms (FindLiveObjects: 0.292677 ms CreateObjectMapping: 0.040215 ms MarkObjects: 0.880267 ms  DeleteObjects: 0.538437 ms)
+Unloading 86 unused Assets to reduce memory usage. Loaded Objects now: 2722.
+Total: 3.235654 ms (FindLiveObjects: 0.716614 ms CreateObjectMapping: 0.100538 ms MarkObjects: 1.681222 ms  DeleteObjects: 0.732811 ms)
 
