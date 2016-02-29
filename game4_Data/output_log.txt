@@ -18,7 +18,7 @@ Platform assembly: C:\Users\gcmolinaleon\Documents\GitHub\First-Boat-Prototype\g
 Loading C:\Users\gcmolinaleon\Documents\GitHub\First-Boat-Prototype\game4_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\gcmolinaleon\Documents\GitHub\First-Boat-Prototype\game4_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\gcmolinaleon\Documents\GitHub\First-Boat-Prototype\game4_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  3.248 seconds
+- Completed reload, in  0.484 seconds
 Platform assembly: C:\Users\gcmolinaleon\Documents\GitHub\First-Boat-Prototype\game4_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\gcmolinaleon\Documents\GitHub\First-Boat-Prototype\game4_Data\Managed\System.dll (this message is harmless)
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
@@ -26,14 +26,14 @@ desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 725.779236 ms
+UnloadTime: 6.060220 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 2450 -> priority: 1 
+  Thread -> id: 25f4 -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 29.824102 ms
+UnloadTime: 129.604935 ms
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1603.
-Total: 1.887884 ms (FindLiveObjects: 0.578094 ms CreateObjectMapping: 0.146897 ms MarkObjects: 1.129937 ms  DeleteObjects: 0.024576 ms)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 2681.
+Total: 2.519599 ms (FindLiveObjects: 0.759063 ms CreateObjectMapping: 0.106123 ms MarkObjects: 1.560576 ms  DeleteObjects: 0.030720 ms)
 
 boat hits rock - destroy rock and take life from boat
  
@@ -43,73 +43,11 @@ Rock hit by the front of the boat
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-player hit trigger cube
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-player hit trigger cube
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-player hit trigger cube
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-player hit trigger cube
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-player hit trigger cube
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-player hit trigger cube
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-waiting...
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-waiting...
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 19.298309 ms
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 2991.
-Total: 2.999948 ms (FindLiveObjects: 0.900934 ms CreateObjectMapping: 0.132933 ms MarkObjects: 1.897938 ms  DeleteObjects: 0.065349 ms)
-
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 19.112873 ms
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 2991.
-Total: 3.036812 ms (FindLiveObjects: 0.878033 ms CreateObjectMapping: 0.135168 ms MarkObjects: 1.948207 ms  DeleteObjects: 0.071493 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 14.264138 ms
-
-Unloading 86 unused Assets to reduce memory usage. Loaded Objects now: 1644.
-Total: 4.331521 ms (FindLiveObjects: 0.649588 ms CreateObjectMapping: 0.146897 ms MarkObjects: 2.420178 ms  DeleteObjects: 1.109830 ms)
-
 boat hits rock - destroy rock and take life from boat
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
 Rock hit by the front of the boat
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-Rock hit by the front of the boat
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-Rock hit by the front of the boat
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-boat hits rock - destroy rock and take life from boat
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
@@ -154,18 +92,38 @@ waiting...
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.374884 ms
+UnloadTime: 18.577227 ms
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 2994.
-Total: 2.811718 ms (FindLiveObjects: 0.828323 ms CreateObjectMapping: 0.107240 ms MarkObjects: 1.814156 ms  DeleteObjects: 0.058647 ms)
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 3011.
+Total: 3.133441 ms (FindLiveObjects: 0.870772 ms CreateObjectMapping: 0.140753 ms MarkObjects: 2.059916 ms  DeleteObjects: 0.059764 ms)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 9.253425 ms
+UnloadTime: 11.183201 ms
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 2994.
-Total: 2.503401 ms (FindLiveObjects: 0.727226 ms CreateObjectMapping: 0.092160 ms MarkObjects: 1.624809 ms  DeleteObjects: 0.056413 ms)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 3011.
+Total: 3.115567 ms (FindLiveObjects: 0.874682 ms CreateObjectMapping: 0.134050 ms MarkObjects: 2.034781 ms  DeleteObjects: 0.068701 ms)
 
 boat hits rock - destroy rock and take life from boat
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Rock hit by the front of the boat
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Rock hit by the front of the boat
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Rock hit by the front of the boat
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+boat hits rock - destroy rock and take life from boat
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Rock hit by the front of the boat
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
@@ -182,66 +140,8 @@ waiting to restart...
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 10.655375 ms
+UnloadTime: 9.937085 ms
 
-Unloading 86 unused Assets to reduce memory usage. Loaded Objects now: 1646.
-Total: 3.843911 ms (FindLiveObjects: 0.465827 ms CreateObjectMapping: 0.163095 ms MarkObjects: 2.465420 ms  DeleteObjects: 0.746775 ms)
-
-player hit trigger cube
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-player hit trigger cube
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-player hit trigger cube
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-player hit trigger cube
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-player hit trigger cube
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-player hit trigger cube
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-waiting...
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 6.684674 ms
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 2996.
-Total: 3.407128 ms (FindLiveObjects: 0.941707 ms CreateObjectMapping: 0.131258 ms MarkObjects: 2.267136 ms  DeleteObjects: 0.063674 ms)
-
-Rock hit by the front of the boat
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-Rock hit by the front of the boat
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-waiting to restart...
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 10.027011 ms
-
-Unloading 86 unused Assets to reduce memory usage. Loaded Objects now: 1648.
-Total: 3.391489 ms (FindLiveObjects: 0.391540 ms CreateObjectMapping: 0.089367 ms MarkObjects: 1.684573 ms  DeleteObjects: 1.223773 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 9.480753 ms
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1646.
-Total: 3.734436 ms (FindLiveObjects: 0.703208 ms CreateObjectMapping: 0.144104 ms MarkObjects: 2.804457 ms  DeleteObjects: 0.077079 ms)
+Unloading 86 unused Assets to reduce memory usage. Loaded Objects now: 2722.
+Total: 3.235654 ms (FindLiveObjects: 0.716614 ms CreateObjectMapping: 0.100538 ms MarkObjects: 1.681222 ms  DeleteObjects: 0.732811 ms)
 
