@@ -149,18 +149,29 @@ public class boat : MonoBehaviour {
         HandleHealth();
 
 		//Move Left or right
-		//Validates if the boat is colliding with the left limit or the right limit
-		if ((Mathf.Abs(rbody.transform.position [0]) < Mathf.Abs(rightLimit.position [0]))) {
-			rbody.transform.Translate (h * sideSpeed * Time.deltaTime, 0, 0);
-			if ((Mathf.Abs (rbody.transform.position [0]) < Mathf.Abs (leftLimit.position [0]))) {
+		//Validates if the boat is colliding with the right limit
+		if (h < 0) {
+			print ("h:"+h);
+			if (rbody.transform.position [0] > leftLimit.position [0]) {
 				rbody.transform.Translate (h * sideSpeed * Time.deltaTime, 0, 0);
+
+			}else {
+				rbody.transform.Translate (1 * sideSpeed * Time.deltaTime, 0, 0);
+				print ("Collision left");
+
+			}
+		}
+		if (h > 0) {
+			if (rbody.transform.position [0] < rightLimit.position [0]) {
+				rbody.transform.Translate (h * sideSpeed * Time.deltaTime, 0, 0);
+
 			} else {
 				rbody.transform.Translate (-1 * sideSpeed * Time.deltaTime, 0, 0);
+				print ("Collision right");
 			}
-
-		} else {
-			rbody.transform.Translate (sideSpeed * Time.deltaTime, 0, 0);
 		}
+
+
         //Move Forward
         rbody.AddForce(transform.forward * accelerateSpeed * Time.deltaTime);
 
