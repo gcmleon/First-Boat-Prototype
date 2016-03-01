@@ -10,7 +10,7 @@ public class WinText : MonoBehaviour {
 	public bool endscene;
 	public GameObject Canvas;
 	public ParticleSystem Fireworks;
-	public int foundTrident;
+
 
 	private bool finish;
 
@@ -25,7 +25,6 @@ public class WinText : MonoBehaviour {
 	{
 		winText = Canvas.GetComponentInChildren<Text> ();
 		//winText.color = Color.clear;
-		foundTrident =0;
 
         // if it is the 1st level, 2nd comes
         if (SceneManager.GetActiveScene().buildIndex == firstlevel)
@@ -53,7 +52,7 @@ public class WinText : MonoBehaviour {
 		{
 			print ("player hit trigger cube");
 			finish = true;
-			foundTrident++;
+
 			//Fireworks.GetComponent<ParticleSystem>.enableEmission = true;
 			Fireworks.enableEmission = true;
 
