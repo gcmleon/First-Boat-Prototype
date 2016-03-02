@@ -294,7 +294,8 @@ public class boat : MonoBehaviour {
 		Destroy(gameObject, 1);
 		yield return new WaitForSeconds(waitTime);
 		print ("waiting to restart...");
-		SceneManager.LoadScene(firstlevel);
+		int currentScene = SceneManager.GetActiveScene ().buildIndex;
+		SceneManager.LoadScene(currentScene);
 	}
 
     private float MapVlaues(float x, float inMin, float inMax, float outMin, float outMax)
