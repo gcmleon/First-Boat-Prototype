@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour {
 
 	public GameObject pausePanel;
+	public GameObject Finish;
 	public bool isPaused;
 	public int foundPieces;
 	public GameObject ImageOnPanel;
@@ -16,10 +17,16 @@ public class UIManager : MonoBehaviour {
 
 
 	void Start () {
+		
 		isPaused = false;
-		foundPieces = 0;
+		//foundPieces = 0;
+		//WinText win = Finish.GetComponent<WinText>();
+		//foundPieces = win.foundTrident;
 		img = (RawImage)ImageOnPanel.GetComponent<RawImage> ();
 		img.texture = tridentPieces[foundPieces];
+
+		foundPieces = SceneManager.GetActiveScene ().buildIndex -1;
+
 	}
 	
 	// Update is called once per frame
