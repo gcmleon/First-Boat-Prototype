@@ -10,6 +10,8 @@ public class MenuController : MonoBehaviour {
 	int currentSelection;
 	float tridentYpos;
 	int firstlevel = 1;
+	int introScene = 5;
+
 	// Use this for initialization
 	void Start () {
 		currentSelection = 0;
@@ -20,7 +22,8 @@ public class MenuController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		
+		//navigating through the list
 		if (Input.GetKeyDown (KeyCode.UpArrow)) {
 			if (currentSelection == 0 )
 				currentSelection = 3;
@@ -49,7 +52,7 @@ public class MenuController : MonoBehaviour {
 		
 		switch (selected) {
 		case 0: //start the intro
-			print ("start Intro");
+			SceneManager.LoadScene (introScene);
 			break;
 		case 1:  //start endless mode
 			SceneManager.LoadScene (firstlevel);
