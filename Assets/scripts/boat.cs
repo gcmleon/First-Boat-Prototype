@@ -49,9 +49,11 @@ public class boat : MonoBehaviour {
     public float coolDown;// taking damage after a period of time 
     private bool onCD; // checks if it is in the cooldown period (can take damage or not )or not 
     private static int currentHealth = 100;
+    public GameObject BH;
+    public string objectName = "Ball";
 
-	//h
-	public float h = 0;
+    //h
+    public float h = 0;
 
 
 	public int CurrentHealth
@@ -80,13 +82,13 @@ public class boat : MonoBehaviour {
         //The max value of the x-Position 
         maxXValue = healthTransform.position.x;
         minXValue = healthTransform.position.x - healthTransform.rect.width;
-        //CurrentHealth = maxHealth;
+       
 
 		// Calculating the min value of the x-Position       
 		minXValue = healthTransform.position.x - healthTransform.rect.width * canvas.scaleFactor;
 
 		// Set the current health to the max health which is 100 
-		//currentHealth = maxHealth;
+		currentHealth = maxHealth;
 
 		// set the cooldamage to false
 		onCD = false;
@@ -126,7 +128,8 @@ public class boat : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (inputUsed == 0) {
+        HandleHealth();
+        if (inputUsed == 0) {
 			h = Input.GetAxis ("Horizontal");	
 		} else if (inputUsed == 1) {
 			//Move Left the boat with the device
@@ -146,7 +149,6 @@ public class boat : MonoBehaviour {
         
         //float v = Input.GetAxis("Vertical");        
 
-        HandleHealth();
 
 		//Move Left or right
 		//Validates if the boat is colliding with the right limit
@@ -240,12 +242,58 @@ public class boat : MonoBehaviour {
                 StartCoroutine(CooldownDmg());
                 CurrentHealth -= 24;
             }
+            else if (!onCD && col.collider.name.Contains("Bone"))
+            {
+                print("boat hits sardine - take life from boat");
+                StartCoroutine(CooldownDmg());
+                CurrentHealth -= 5;
+            }
             else if (!onCD && col.collider.name == "toad 1")
             {
                 print("boat hits monster - destroy monster and take life from boat");
                 StartCoroutine(CooldownDmg());
+                CurrentHealth -= 15;
+            }
+            else if (!onCD && col.collider.name.Contains("NarwhalTextured_Swap"))
+            {
+                print("boat hits pointy whale - destroy monster and take life from boat");
+                StartCoroutine(CooldownDmg());
+                CurrentHealth -= 25;
+            }
+            else if (!onCD && col.collider.name.Contains("WhiteShark"))
+            {
+                print("boat hits shark - destroy monster and take life from boat");
+                StartCoroutine(CooldownDmg());
+                CurrentHealth -= 35;
+            }
+            else if (!onCD && col.collider.name.Contains("whale"))
+            {
+                print("boat hits Whale - take life from boat");
+                StartCoroutine(CooldownDmg());
                 CurrentHealth -= 45;
             }
+			else if (!onCD && col.collider.name.Contains("Groucho"))
+			{
+				print("boat hits Groucho - take life from boat");
+				StartCoroutine(CooldownDmg());
+				CurrentHealth -= 45;
+			}
+            else if (col.collider.name.Contains(objectName))
+            {
+                print("boat hits ball - destroy ball and add life to boat");
+                print(col.gameObject.name);
+                BH = GameObject.Find(col.gameObject.name);
+                if (currentHealth != 100)
+                {
+                    Destroy(BH);
+                    CurrentHealth += 24;
+                }
+                else
+                {
+                    Destroy(BH);
+                }
+            }
+
             else if (col.collider.name == "Shooting_Wave(Clone)")
             {
                 print("Boat hit by Shooting Wave");
@@ -276,7 +324,8 @@ public class boat : MonoBehaviour {
 		Destroy(gameObject, 1);
 		yield return new WaitForSeconds(waitTime);
 		print ("waiting to restart...");
-		SceneManager.LoadScene(firstlevel);
+		int currentScene = SceneManager.GetActiveScene ().buildIndex;
+		SceneManager.LoadScene(currentScene);
 	}
 
     private float MapVlaues(float x, float inMin, float inMax, float outMin, float outMax)

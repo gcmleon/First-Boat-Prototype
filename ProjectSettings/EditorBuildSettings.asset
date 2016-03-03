@@ -19,3 +19,5 @@ EditorBuildSettings:
     path: Assets/scenes/scene03.unity
   - enabled: 1
     path: Assets/scenes/endscene.unity
+  - enabled: 1
+    path: Assets/scenes/IntroScene.unity
