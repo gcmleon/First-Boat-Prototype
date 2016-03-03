@@ -242,7 +242,7 @@ public class boat : MonoBehaviour {
                 StartCoroutine(CooldownDmg());
                 CurrentHealth -= 24;
             }
-            else if (!onCD && col.collider.name.Contains("Sardine"))
+            else if (!onCD && col.collider.name.Contains("Bone"))
             {
                 print("boat hits sardine - take life from boat");
                 StartCoroutine(CooldownDmg());
