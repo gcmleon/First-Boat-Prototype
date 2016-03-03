@@ -246,7 +246,19 @@ public class boat : MonoBehaviour {
             {
                 print("boat hits monster - destroy monster and take life from boat");
                 StartCoroutine(CooldownDmg());
-                CurrentHealth -= 45;
+                CurrentHealth -= 15;
+            }
+            else if (!onCD && col.collider.name.Contains("NarwhalTextured_Swap"))
+            {
+                print("boat hits pointy whale - destroy monster and take life from boat");
+                StartCoroutine(CooldownDmg());
+                CurrentHealth -= 25;
+            }
+            else if (!onCD && col.collider.name.Contains("WhiteShark"))
+            {
+                print("boat hits shark - destroy monster and take life from boat");
+                StartCoroutine(CooldownDmg());
+                CurrentHealth -= 35;
             }
             else if (col.collider.name.Contains(objectName))
             {
