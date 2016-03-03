@@ -260,6 +260,12 @@ public class boat : MonoBehaviour {
                 StartCoroutine(CooldownDmg());
                 CurrentHealth -= 35;
             }
+            else if (!onCD && col.collider.name.Contains("whale"))
+            {
+                print("boat hits Whale - take life from boat");
+                StartCoroutine(CooldownDmg());
+                CurrentHealth -= 45;
+            }
             else if (col.collider.name.Contains(objectName))
             {
                 print("boat hits ball - destroy ball and add life to boat");
