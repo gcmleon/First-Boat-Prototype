@@ -248,7 +248,7 @@ public class boat : MonoBehaviour {
                 StartCoroutine(CooldownDmg());
                 CurrentHealth -= 45;
             }
-            else if (!onCD && col.collider.name.Contains(objectName))
+            else if (col.collider.name.Contains(objectName))
             {
                 print("boat hits ball - destroy ball and add life to boat");
                 print(col.gameObject.name);
